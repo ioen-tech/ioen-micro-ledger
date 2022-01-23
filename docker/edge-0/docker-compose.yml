@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  conductor:
+    image: "simwilso/ledger:0.2"
+    network_mode: host
+    volumes:
+      - type: volume
+        source: ledgerdata2
+        target: /tem/databases
+    environment:
+      APPLICATION_ID: "edge-0"
+      PORT: 8889
+      HC_PORT: 9991
+
+volumes:
+  ledgerdata2:

@@ -1,0 +1,1163 @@
+newman
+
+MEN-Agent
+
+Iteration 1/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 266ms]
+  ┌
+  │ 'Time', '2:36:56 PM'
+  │ 'Timestamp', 1600699016851
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.81KB, 33ms]
+  ┌
+  │ 'Time', '2:36:57 PM'
+  │ 'Timestamp', 1600699017375
+  │ 'Number of BidCommitments', 1
+  └
+  ✓  GetBidCommitments
+
+Iteration 2/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 44ms]
+  ┌
+  │ 'Time', '2:36:57 PM'
+  │ 'Timestamp', 1600699017873
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 3.33KB, 45ms]
+  ┌
+  │ 'Time', '2:36:58 PM'
+  │ 'Timestamp', 1600699018395
+  │ 'Number of BidCommitments', 2
+  └
+  ✓  GetBidCommitments
+
+Iteration 3/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 37ms]
+  ┌
+  │ 'Time', '2:36:58 PM'
+  │ 'Timestamp', 1600699018871
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 4.85KB, 53ms]
+  ┌
+  │ 'Time', '2:36:59 PM'
+  │ 'Timestamp', 1600699019376
+  │ 'Number of BidCommitments', 3
+  └
+  ✓  GetBidCommitments
+
+Iteration 4/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 39ms]
+  ┌
+  │ 'Time', '2:36:59 PM'
+  │ 'Timestamp', 1600699019856
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 6.38KB, 51ms]
+  ┌
+  │ 'Time', '2:37:00 PM'
+  │ 'Timestamp', 1600699020370
+  │ 'Number of BidCommitments', 4
+  └
+  ✓  GetBidCommitments
+
+Iteration 5/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 41ms]
+  ┌
+  │ 'Time', '2:37:00 PM'
+  │ 'Timestamp', 1600699020853
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 7.9KB, 30ms]
+  ┌
+  │ 'Time', '2:37:01 PM'
+  │ 'Timestamp', 1600699021361
+  │ 'Number of BidCommitments', 5
+  └
+  ✓  GetBidCommitments
+
+Iteration 6/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 35ms]
+  ┌
+  │ 'Time', '2:37:01 PM'
+  │ 'Timestamp', 1600699021845
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 9.42KB, 61ms]
+  ┌
+  │ 'Time', '2:37:02 PM'
+  │ 'Timestamp', 1600699022392
+  │ 'Number of BidCommitments', 6
+  └
+  ✓  GetBidCommitments
+
+Iteration 7/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 40ms]
+  ┌
+  │ 'Time', '2:37:02 PM'
+  │ 'Timestamp', 1600699022875
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 10.95KB, 47ms]
+  ┌
+  │ 'Time', '2:37:03 PM'
+  │ 'Timestamp', 1600699023392
+  │ 'Number of BidCommitments', 7
+  └
+  ✓  GetBidCommitments
+
+Iteration 8/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 34ms]
+  ┌
+  │ 'Time', '2:37:03 PM'
+  │ 'Timestamp', 1600699023869
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 12.47KB, 33ms]
+  ┌
+  │ 'Time', '2:37:04 PM'
+  │ 'Timestamp', 1600699024360
+  │ 'Number of BidCommitments', 8
+  └
+  ✓  GetBidCommitments
+
+Iteration 9/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 35ms]
+  ┌
+  │ 'Time', '2:37:04 PM'
+  │ 'Timestamp', 1600699024842
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 14KB, 35ms]
+  ┌
+  │ 'Time', '2:37:05 PM'
+  │ 'Timestamp', 1600699025322
+  │ 'Number of BidCommitments', 9
+  └
+  ✓  GetBidCommitments
+
+Iteration 10/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 43ms]
+  ┌
+  │ 'Time', '2:37:05 PM'
+  │ 'Timestamp', 1600699025829
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 15.52KB, 44ms]
+  ┌
+  │ 'Time', '2:37:06 PM'
+  │ 'Timestamp', 1600699026336
+  │ 'Number of BidCommitments', 10
+  └
+  ✓  GetBidCommitments
+
+Iteration 11/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 38ms]
+  ┌
+  │ 'Time', '2:37:06 PM'
+  │ 'Timestamp', 1600699026841
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 17.04KB, 67ms]
+  ┌
+  │ 'Time', '2:37:07 PM'
+  │ 'Timestamp', 1600699027400
+  │ 'Number of BidCommitments', 11
+  └
+  ✓  GetBidCommitments
+
+Iteration 12/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 37ms]
+  ┌
+  │ 'Time', '2:37:07 PM'
+  │ 'Timestamp', 1600699027873
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 18.57KB, 39ms]
+  ┌
+  │ 'Time', '2:37:08 PM'
+  │ 'Timestamp', 1600699028394
+  │ 'Number of BidCommitments', 12
+  └
+  ✓  GetBidCommitments
+
+Iteration 13/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 36ms]
+  ┌
+  │ 'Time', '2:37:08 PM'
+  │ 'Timestamp', 1600699028864
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 20.09KB, 49ms]
+  ┌
+  │ 'Time', '2:37:09 PM'
+  │ 'Timestamp', 1600699029381
+  │ 'Number of BidCommitments', 13
+  └
+  ✓  GetBidCommitments
+
+Iteration 14/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 42ms]
+  ┌
+  │ 'Time', '2:37:09 PM'
+  │ 'Timestamp', 1600699029869
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 21.61KB, 65ms]
+  ┌
+  │ 'Time', '2:37:10 PM'
+  │ 'Timestamp', 1600699030422
+  │ 'Number of BidCommitments', 14
+  └
+  ✓  GetBidCommitments
+
+Iteration 15/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 36ms]
+  ┌
+  │ 'Time', '2:37:10 PM'
+  │ 'Timestamp', 1600699030892
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 23.14KB, 52ms]
+  ┌
+  │ 'Time', '2:37:11 PM'
+  │ 'Timestamp', 1600699031388
+  │ 'Number of BidCommitments', 15
+  └
+  ✓  GetBidCommitments
+
+Iteration 16/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 39ms]
+  ┌
+  │ 'Time', '2:37:11 PM'
+  │ 'Timestamp', 1600699031863
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 24.66KB, 107ms]
+  ┌
+  │ 'Time', '2:37:12 PM'
+  │ 'Timestamp', 1600699032431
+  │ 'Number of BidCommitments', 16
+  └
+  ✓  GetBidCommitments
+
+Iteration 17/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 38ms]
+  ┌
+  │ 'Time', '2:37:12 PM'
+  │ 'Timestamp', 1600699032911
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 26.18KB, 61ms]
+  ┌
+  │ 'Time', '2:37:13 PM'
+  │ 'Timestamp', 1600699033477
+  │ 'Number of BidCommitments', 17
+  └
+  ✓  GetBidCommitments
+
+Iteration 18/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 36ms]
+  ┌
+  │ 'Time', '2:37:13 PM'
+  │ 'Timestamp', 1600699033950
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 27.71KB, 78ms]
+  ┌
+  │ 'Time', '2:37:14 PM'
+  │ 'Timestamp', 1600699034489
+  │ 'Number of BidCommitments', 18
+  └
+  ✓  GetBidCommitments
+
+Iteration 19/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 39ms]
+  ┌
+  │ 'Time', '2:37:14 PM'
+  │ 'Timestamp', 1600699034964
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 29.23KB, 43ms]
+  ┌
+  │ 'Time', '2:37:15 PM'
+  │ 'Timestamp', 1600699035454
+  │ 'Number of BidCommitments', 19
+  └
+  ✓  GetBidCommitments
+
+Iteration 20/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 36ms]
+  ┌
+  │ 'Time', '2:37:15 PM'
+  │ 'Timestamp', 1600699035930
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 30.75KB, 40ms]
+  ┌
+  │ 'Time', '2:37:16 PM'
+  │ 'Timestamp', 1600699036428
+  │ 'Number of BidCommitments', 20
+  └
+  ✓  GetBidCommitments
+
+Iteration 21/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 37ms]
+  ┌
+  │ 'Time', '2:37:16 PM'
+  │ 'Timestamp', 1600699036898
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 32.28KB, 61ms]
+  ┌
+  │ 'Time', '2:37:17 PM'
+  │ 'Timestamp', 1600699037399
+  │ 'Number of BidCommitments', 21
+  └
+  ✓  GetBidCommitments
+
+Iteration 22/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 36ms]
+  ┌
+  │ 'Time', '2:37:17 PM'
+  │ 'Timestamp', 1600699037872
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 33.8KB, 52ms]
+  ┌
+  │ 'Time', '2:37:18 PM'
+  │ 'Timestamp', 1600699038374
+  │ 'Number of BidCommitments', 22
+  └
+  ✓  GetBidCommitments
+
+Iteration 23/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 37ms]
+  ┌
+  │ 'Time', '2:37:18 PM'
+  │ 'Timestamp', 1600699038857
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 35.32KB, 59ms]
+  ┌
+  │ 'Time', '2:37:19 PM'
+  │ 'Timestamp', 1600699039392
+  │ 'Number of BidCommitments', 23
+  └
+  ✓  GetBidCommitments
+
+Iteration 24/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 60ms]
+  ┌
+  │ 'Time', '2:37:19 PM'
+  │ 'Timestamp', 1600699039906
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 67.31KB, 81ms]
+  ┌
+  │ 'Time', '2:37:20 PM'
+  │ 'Timestamp', 1600699040445
+  │ 'Number of BidCommitments', 44
+  └
+  ✓  GetBidCommitments
+
+Iteration 25/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 59ms]
+  ┌
+  │ 'Time', '2:37:20 PM'
+  │ 'Timestamp', 1600699040950
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 129.75KB, 275ms]
+  ┌
+  │ 'Time', '2:37:21 PM'
+  │ 'Timestamp', 1600699041716
+  │ 'Number of BidCommitments', 85
+  └
+  ✓  GetBidCommitments
+
+Iteration 26/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 37ms]
+  ┌
+  │ 'Time', '2:37:22 PM'
+  │ 'Timestamp', 1600699042201
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 161.74KB, 114ms]
+  ┌
+  │ 'Time', '2:37:22 PM'
+  │ 'Timestamp', 1600699042806
+  │ 'Number of BidCommitments', 106
+  └
+  ✓  GetBidCommitments
+
+Iteration 27/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 221ms]
+  ┌
+  │ 'Time', '2:37:23 PM'
+  │ 'Timestamp', 1600699043495
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 193.72KB, 116ms]
+  ┌
+  │ 'Time', '2:37:24 PM'
+  │ 'Timestamp', 1600699044086
+  │ 'Number of BidCommitments', 127
+  └
+  ✓  GetBidCommitments
+
+Iteration 28/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 34ms]
+  ┌
+  │ 'Time', '2:37:24 PM'
+  │ 'Timestamp', 1600699044581
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 225.7KB, 149ms]
+  ┌
+  │ 'Time', '2:37:25 PM'
+  │ 'Timestamp', 1600699045206
+  │ 'Number of BidCommitments', 148
+  └
+  ✓  GetBidCommitments
+
+Iteration 29/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 45ms]
+  ┌
+  │ 'Time', '2:37:25 PM'
+  │ 'Timestamp', 1600699045706
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 257.69KB, 105ms]
+  ┌
+  │ 'Time', '2:37:26 PM'
+  │ 'Timestamp', 1600699046276
+  │ 'Number of BidCommitments', 169
+  └
+  ✓  GetBidCommitments
+
+Iteration 30/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 60ms]
+  ┌
+  │ 'Time', '2:37:26 PM'
+  │ 'Timestamp', 1600699046866
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 289.67KB, 190ms]
+  ┌
+  │ 'Time', '2:37:27 PM'
+  │ 'Timestamp', 1600699047592
+  │ 'Number of BidCommitments', 190
+  └
+  ✓  GetBidCommitments
+
+Iteration 31/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 37ms]
+  ┌
+  │ 'Time', '2:37:28 PM'
+  │ 'Timestamp', 1600699048128
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 352.11KB, 349ms]
+  ┌
+  │ 'Time', '2:37:28 PM'
+  │ 'Timestamp', 1600699048988
+  │ 'Number of BidCommitments', 231
+  └
+  ✓  GetBidCommitments
+
+Iteration 32/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 52ms]
+  ┌
+  │ 'Time', '2:37:29 PM'
+  │ 'Timestamp', 1600699049544
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 384.1KB, 166ms]
+  ┌
+  │ 'Time', '2:37:30 PM'
+  │ 'Timestamp', 1600699050221
+  │ 'Number of BidCommitments', 252
+  └
+  ✓  GetBidCommitments
+
+Iteration 33/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 52ms]
+  ┌
+  │ 'Time', '2:37:30 PM'
+  │ 'Timestamp', 1600699050784
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 416.08KB, 201ms]
+  ┌
+  │ 'Time', '2:37:31 PM'
+  │ 'Timestamp', 1600699051496
+  │ 'Number of BidCommitments', 273
+  └
+  ✓  GetBidCommitments
+
+Iteration 34/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 64ms]
+  ┌
+  │ 'Time', '2:37:32 PM'
+  │ 'Timestamp', 1600699052077
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 448.06KB, 199ms]
+  ┌
+  │ 'Time', '2:37:32 PM'
+  │ 'Timestamp', 1600699052790
+  │ 'Number of BidCommitments', 294
+  └
+  ✓  GetBidCommitments
+
+Iteration 35/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 48ms]
+  ┌
+  │ 'Time', '2:37:33 PM'
+  │ 'Timestamp', 1600699053320
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 480.05KB, 189ms]
+  ┌
+  │ 'Time', '2:37:34 PM'
+  │ 'Timestamp', 1600699054067
+  │ 'Number of BidCommitments', 315
+  └
+  ✓  GetBidCommitments
+
+Iteration 36/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 52ms]
+  ┌
+  │ 'Time', '2:37:34 PM'
+  │ 'Timestamp', 1600699054625
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 512.03KB, 183ms]
+  ┌
+  │ 'Time', '2:37:35 PM'
+  │ 'Timestamp', 1600699055327
+  │ 'Number of BidCommitments', 336
+  └
+  ✓  GetBidCommitments
+
+Iteration 37/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 64ms]
+  ┌
+  │ 'Time', '2:37:35 PM'
+  │ 'Timestamp', 1600699055911
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 544.01KB, 244ms]
+  ┌
+  │ 'Time', '2:37:36 PM'
+  │ 'Timestamp', 1600699056729
+  │ 'Number of BidCommitments', 357
+  └
+  ✓  GetBidCommitments
+
+Iteration 38/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 62ms]
+  ┌
+  │ 'Time', '2:37:37 PM'
+  │ 'Timestamp', 1600699057385
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 576KB, 226ms]
+  ┌
+  │ 'Time', '2:37:38 PM'
+  │ 'Timestamp', 1600699058197
+  │ 'Number of BidCommitments', 378
+  └
+  ✓  GetBidCommitments
+
+Iteration 39/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 55ms]
+  ┌
+  │ 'Time', '2:37:38 PM'
+  │ 'Timestamp', 1600699058751
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 607.98KB, 217ms]
+  ┌
+  │ 'Time', '2:37:39 PM'
+  │ 'Timestamp', 1600699059608
+  │ 'Number of BidCommitments', 399
+  └
+  ✓  GetBidCommitments
+
+Iteration 40/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 54ms]
+  ┌
+  │ 'Time', '2:37:40 PM'
+  │ 'Timestamp', 1600699060162
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 639.96KB, 235ms]
+  ┌
+  │ 'Time', '2:37:40 PM'
+  │ 'Timestamp', 1600699060913
+  │ 'Number of BidCommitments', 420
+  └
+  ✓  GetBidCommitments
+
+Iteration 41/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 59ms]
+  ┌
+  │ 'Time', '2:37:41 PM'
+  │ 'Timestamp', 1600699061460
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 671.95KB, 334ms]
+  ┌
+  │ 'Time', '2:37:42 PM'
+  │ 'Timestamp', 1600699062380
+  │ 'Number of BidCommitments', 441
+  └
+  ✓  GetBidCommitments
+
+Iteration 42/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 60ms]
+  ┌
+  │ 'Time', '2:37:42 PM'
+  │ 'Timestamp', 1600699062943
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 703.93KB, 465ms]
+  ┌
+  │ 'Time', '2:37:44 PM'
+  │ 'Timestamp', 1600699064083
+  │ 'Number of BidCommitments', 462
+  └
+  ✓  GetBidCommitments
+
+Iteration 43/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 62ms]
+  ┌
+  │ 'Time', '2:37:44 PM'
+  │ 'Timestamp', 1600699064641
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 735.91KB, 326ms]
+  ┌
+  │ 'Time', '2:37:45 PM'
+  │ 'Timestamp', 1600699065522
+  │ 'Number of BidCommitments', 483
+  └
+  ✓  GetBidCommitments
+
+Iteration 44/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 99ms]
+  ┌
+  │ 'Time', '2:37:46 PM'
+  │ 'Timestamp', 1600699066162
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 767.9KB, 253ms]
+  ┌
+  │ 'Time', '2:37:47 PM'
+  │ 'Timestamp', 1600699067001
+  │ 'Number of BidCommitments', 504
+  └
+  ✓  GetBidCommitments
+
+Iteration 45/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 56ms]
+  ┌
+  │ 'Time', '2:37:47 PM'
+  │ 'Timestamp', 1600699067553
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 799.88KB, 558ms]
+  ┌
+  │ 'Time', '2:37:48 PM'
+  │ 'Timestamp', 1600699068728
+  │ 'Number of BidCommitments', 525
+  └
+  ✓  GetBidCommitments
+
+Iteration 46/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 47ms]
+  ┌
+  │ 'Time', '2:37:49 PM'
+  │ 'Timestamp', 1600699069264
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 831.86KB, 377ms]
+  ┌
+  │ 'Time', '2:37:50 PM'
+  │ 'Timestamp', 1600699070217
+  │ 'Number of BidCommitments', 546
+  └
+  ✓  GetBidCommitments
+
+Iteration 47/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 73ms]
+  ┌
+  │ 'Time', '2:37:50 PM'
+  │ 'Timestamp', 1600699070806
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 863.85KB, 480ms]
+  ┌
+  │ 'Time', '2:37:51 PM'
+  │ 'Timestamp', 1600699071853
+  │ 'Number of BidCommitments', 567
+  └
+  ✓  GetBidCommitments
+
+Iteration 48/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 55ms]
+  ┌
+  │ 'Time', '2:37:52 PM'
+  │ 'Timestamp', 1600699072550
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 895.83KB, 603ms]
+  ┌
+  │ 'Time', '2:37:53 PM'
+  │ 'Timestamp', 1600699073733
+  │ 'Number of BidCommitments', 588
+  └
+  ✓  GetBidCommitments
+
+Iteration 49/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 49ms]
+  ┌
+  │ 'Time', '2:37:54 PM'
+  │ 'Timestamp', 1600699074322
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 927.81KB, 466ms]
+  ┌
+  │ 'Time', '2:37:55 PM'
+  │ 'Timestamp', 1600699075414
+  │ 'Number of BidCommitments', 609
+  └
+  ✓  GetBidCommitments
+
+Iteration 50/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 64ms]
+  ┌
+  │ 'Time', '2:37:56 PM'
+  │ 'Timestamp', 1600699076084
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 929.34KB, 456ms]
+  ┌
+  │ 'Time', '2:37:57 PM'
+  │ 'Timestamp', 1600699077249
+  │ 'Number of BidCommitments', 610
+  └
+  ✓  GetBidCommitments
+
+Iteration 51/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 62ms]
+  ┌
+  │ 'Time', '2:37:58 PM'
+  │ 'Timestamp', 1600699078003
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 991.78KB, 505ms]
+  ┌
+  │ 'Time', '2:37:59 PM'
+  │ 'Timestamp', 1600699079101
+  │ 'Number of BidCommitments', 651
+  └
+  ✓  GetBidCommitments
+
+Iteration 52/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 66ms]
+  ┌
+  │ 'Time', '2:37:59 PM'
+  │ 'Timestamp', 1600699079806
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 993.31KB, 479ms]
+  ┌
+  │ 'Time', '2:38:00 PM'
+  │ 'Timestamp', 1600699081007
+  │ 'Number of BidCommitments', 652
+  └
+  ✓  GetBidCommitments
+
+Iteration 53/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 80ms]
+  ┌
+  │ 'Time', '2:38:01 PM'
+  │ 'Timestamp', 1600699081839
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.03MB, 512ms]
+  ┌
+  │ 'Time', '2:38:02 PM'
+  │ 'Timestamp', 1600699082943
+  │ 'Number of BidCommitments', 693
+  └
+  ✓  GetBidCommitments
+
+Iteration 54/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 77ms]
+  ┌
+  │ 'Time', '2:38:03 PM'
+  │ 'Timestamp', 1600699083707
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.06MB, 540ms]
+  ┌
+  │ 'Time', '2:38:04 PM'
+  │ 'Timestamp', 1600699084875
+  │ 'Number of BidCommitments', 714
+  └
+  ✓  GetBidCommitments
+
+Iteration 55/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 116ms]
+  ┌
+  │ 'Time', '2:38:05 PM'
+  │ 'Timestamp', 1600699085659
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.09MB, 576ms]
+  ┌
+  │ 'Time', '2:38:06 PM'
+  │ 'Timestamp', 1600699086857
+  │ 'Number of BidCommitments', 735
+  └
+  ✓  GetBidCommitments
+
+Iteration 56/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 96ms]
+  ┌
+  │ 'Time', '2:38:07 PM'
+  │ 'Timestamp', 1600699087522
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.12MB, 628ms]
+  ┌
+  │ 'Time', '2:38:08 PM'
+  │ 'Timestamp', 1600699088734
+  │ 'Number of BidCommitments', 756
+  └
+  ✓  GetBidCommitments
+
+Iteration 57/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 100ms]
+  ┌
+  │ 'Time', '2:38:09 PM'
+  │ 'Timestamp', 1600699089484
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.13MB, 496ms]
+  ┌
+  │ 'Time', '2:38:10 PM'
+  │ 'Timestamp', 1600699090778
+  │ 'Number of BidCommitments', 757
+  └
+  ✓  GetBidCommitments
+
+Iteration 58/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 71ms]
+  ┌
+  │ 'Time', '2:38:11 PM'
+  │ 'Timestamp', 1600699091533
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.16MB, 674ms]
+  ┌
+  │ 'Time', '2:38:13 PM'
+  │ 'Timestamp', 1600699093019
+  │ 'Number of BidCommitments', 778
+  └
+  ✓  GetBidCommitments
+
+Iteration 59/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 64ms]
+  ┌
+  │ 'Time', '2:38:13 PM'
+  │ 'Timestamp', 1600699093798
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.19MB, 592ms]
+  ┌
+  │ 'Time', '2:38:15 PM'
+  │ 'Timestamp', 1600699095130
+  │ 'Number of BidCommitments', 799
+  └
+  ✓  GetBidCommitments
+
+Iteration 60/60
+
+→ BidCommitment
+  POST http://localhost:8888/BidCommitment [200 OK, 501B, 76ms]
+  ┌
+  │ 'Time', '2:38:15 PM'
+  │ 'Timestamp', 1600699095965
+  └
+  ✓  BidCommitment
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.22MB, 525ms]
+  ┌
+  │ 'Time', '2:38:17 PM'
+  │ 'Timestamp', 1600699097237
+  │ 'Number of BidCommitments', 820
+  └
+  ✓  GetBidCommitments
+
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                 60 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                120 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                120 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                 60 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                120 │                  0 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 1m 21.3s                                      │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 25.43MB (approx)                             │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 148ms [min: 30ms, max: 674ms, s.d.: 169ms] │
+└───────────────────────────────────────────────────────────────────┘

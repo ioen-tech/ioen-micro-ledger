@@ -1,0 +1,31 @@
+{
+  "name": "demo-1",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run build && WASM_LOG=warn TRYORAMA_LOG_LEVEL=info RUST_LOG=error RUST_BACKTRACE=1 TRYORAMA_HOLOCHAIN_PATH=\"holochain\" ts-node src/index.ts",
+    "test:messages": "npm run build && WASM_LOG=warn TRYORAMA_LOG_LEVEL=info RUST_LOG=error RUST_BACKTRACE=1 TRYORAMA_HOLOCHAIN_PATH=\"holochain\" ts-node src/messages.ts",
+    "test:stress": "STRESS=true TRYORAMA_LOG_LEVEL=debug RUST_BACKTRACE=1 TRYORAMA_HOLOCHAIN_PATH=\"holochain\" ts-node src/index.ts",
+    "build": "npm run build:zomes && npm run build:dna && npm run build:app",
+    "build:zomes": "cd ../dna && CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown && cd ../tests",
+    "build:dna": "hc dna pack ../dna/workdir/dna",
+    "build:app": "hc app pack ../dna/workdir/happ"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "get-port": "^5.1.1",
+    "js-base64": "^3.6.1",
+    "lodash": "^4.17.19",
+    "node-fetch": "^2.6.1",
+    "tape": "^5.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
+  },
+  "devDependencies": {
+    "@holochain/tryorama": "0.4.2",
+    "@types/lodash": "^4.14.158",
+    "@types/node": "^14.0.14"
+  }
+}

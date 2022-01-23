@@ -1,0 +1,49 @@
+newman
+
+MEN-Market
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 266ms]
+  ┌
+  │ 'Time', '4:59:44 PM'
+  │ 'Timestamp', 1600707584232
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 78.23KB, 38ms]
+  ┌
+  │ 'Time', '4:59:44 PM'
+  │ 'Timestamp', 1600707584320
+  │ 'Number of MarketPlans', 1
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 74.93KB, 48ms]
+  ┌
+  │ 'Time', '4:59:44 PM'
+  │ 'Timestamp', 1600707584417
+  │ 'Number of BidCommitments', 49
+  └
+  ✓  GetBidCommitments
+
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                  3 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                  3 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                  3 │                  0 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 543ms                                         │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 152.84KB (approx)                            │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 117ms [min: 38ms, max: 266ms, s.d.: 105ms] │
+└───────────────────────────────────────────────────────────────────┘

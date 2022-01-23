@@ -1,0 +1,15 @@
+{
+  "revisionId": 3,
+  "contractNumber": "number",
+  "source": "REPLACE",
+  "destination": "REPLACE",
+  "type": "type1",
+  "active": "active",
+  "validFrom": 1596002520000,
+  "validTo": 1596002520000,
+  "payload": {
+    "sample": "yes"
+  },
+  "status": "status0",
+  "revisionNumber": "revision0"
+}

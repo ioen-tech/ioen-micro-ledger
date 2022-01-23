@@ -1,0 +1,1703 @@
+newman
+
+MEN-Market
+
+Iteration 1/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 311ms]
+  ┌
+  │ 'Time', '2:37:19 PM'
+  │ 'Timestamp', 1600699039535
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 78.23KB, 41ms]
+  ┌
+  │ 'Time', '2:37:19 PM'
+  │ 'Timestamp', 1600699039735
+  │ 'Number of MarketPlans', 1
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 496.92KB, 118ms]
+  ┌
+  │ 'Time', '2:37:20 PM'
+  │ 'Timestamp', 1600699040052
+  │ 'Number of BidCommitments', 326
+  └
+  ✓  GetBidCommitments
+
+Iteration 2/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 172ms]
+  ┌
+  │ 'Time', '2:37:20 PM'
+  │ 'Timestamp', 1600699040387
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 156.17KB, 42ms]
+  ┌
+  │ 'Time', '2:37:20 PM'
+  │ 'Timestamp', 1600699040580
+  │ 'Number of MarketPlans', 2
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 539.57KB, 134ms]
+  ┌
+  │ 'Time', '2:37:20 PM'
+  │ 'Timestamp', 1600699040907
+  │ 'Number of BidCommitments', 354
+  └
+  ✓  GetBidCommitments
+
+Iteration 3/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 211ms]
+  ┌
+  │ 'Time', '2:37:21 PM'
+  │ 'Timestamp', 1600699041276
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 234.12KB, 53ms]
+  ┌
+  │ 'Time', '2:37:21 PM'
+  │ 'Timestamp', 1600699041472
+  │ 'Number of MarketPlans', 3
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 585.26KB, 128ms]
+  ┌
+  │ 'Time', '2:37:21 PM'
+  │ 'Timestamp', 1600699041803
+  │ 'Number of BidCommitments', 384
+  └
+  ✓  GetBidCommitments
+
+Iteration 4/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 199ms]
+  ┌
+  │ 'Time', '2:37:22 PM'
+  │ 'Timestamp', 1600699042186
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 312.06KB, 62ms]
+  ┌
+  │ 'Time', '2:37:22 PM'
+  │ 'Timestamp', 1600699042402
+  │ 'Number of MarketPlans', 4
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 632.48KB, 131ms]
+  ┌
+  │ 'Time', '2:37:22 PM'
+  │ 'Timestamp', 1600699042742
+  │ 'Number of BidCommitments', 415
+  └
+  ✓  GetBidCommitments
+
+Iteration 5/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 219ms]
+  ┌
+  │ 'Time', '2:37:23 PM'
+  │ 'Timestamp', 1600699043135
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 390.01KB, 61ms]
+  ┌
+  │ 'Time', '2:37:23 PM'
+  │ 'Timestamp', 1600699043359
+  │ 'Number of MarketPlans', 5
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 681.22KB, 180ms]
+  ┌
+  │ 'Time', '2:37:23 PM'
+  │ 'Timestamp', 1600699043769
+  │ 'Number of BidCommitments', 447
+  └
+  ✓  GetBidCommitments
+
+Iteration 6/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 213ms]
+  ┌
+  │ 'Time', '2:37:24 PM'
+  │ 'Timestamp', 1600699044157
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 467.95KB, 106ms]
+  ┌
+  │ 'Time', '2:37:24 PM'
+  │ 'Timestamp', 1600699044440
+  │ 'Number of MarketPlans', 6
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 733.01KB, 168ms]
+  ┌
+  │ 'Time', '2:37:24 PM'
+  │ 'Timestamp', 1600699044857
+  │ 'Number of BidCommitments', 481
+  └
+  ✓  GetBidCommitments
+
+Iteration 7/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 168ms]
+  ┌
+  │ 'Time', '2:37:25 PM'
+  │ 'Timestamp', 1600699045187
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 545.89KB, 96ms]
+  ┌
+  │ 'Time', '2:37:25 PM'
+  │ 'Timestamp', 1600699045459
+  │ 'Number of MarketPlans', 7
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 780.23KB, 166ms]
+  ┌
+  │ 'Time', '2:37:25 PM'
+  │ 'Timestamp', 1600699045857
+  │ 'Number of BidCommitments', 512
+  └
+  ✓  GetBidCommitments
+
+Iteration 8/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 203ms]
+  ┌
+  │ 'Time', '2:37:26 PM'
+  │ 'Timestamp', 1600699046223
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 623.84KB, 87ms]
+  ┌
+  │ 'Time', '2:37:26 PM'
+  │ 'Timestamp', 1600699046491
+  │ 'Number of MarketPlans', 8
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 825.92KB, 168ms]
+  ┌
+  │ 'Time', '2:37:26 PM'
+  │ 'Timestamp', 1600699046926
+  │ 'Number of BidCommitments', 542
+  └
+  ✓  GetBidCommitments
+
+Iteration 9/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 203ms]
+  ┌
+  │ 'Time', '2:37:27 PM'
+  │ 'Timestamp', 1600699047319
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 701.78KB, 98ms]
+  ┌
+  │ 'Time', '2:37:27 PM'
+  │ 'Timestamp', 1600699047609
+  │ 'Number of MarketPlans', 9
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 877.71KB, 170ms]
+  ┌
+  │ 'Time', '2:37:28 PM'
+  │ 'Timestamp', 1600699048026
+  │ 'Number of BidCommitments', 576
+  └
+  ✓  GetBidCommitments
+
+Iteration 10/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 217ms]
+  ┌
+  │ 'Time', '2:37:28 PM'
+  │ 'Timestamp', 1600699048470
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 779.73KB, 110ms]
+  ┌
+  │ 'Time', '2:37:28 PM'
+  │ 'Timestamp', 1600699048779
+  │ 'Number of MarketPlans', 10
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 927.97KB, 189ms]
+  ┌
+  │ 'Time', '2:37:29 PM'
+  │ 'Timestamp', 1600699049253
+  │ 'Number of BidCommitments', 609
+  └
+  ✓  GetBidCommitments
+
+Iteration 11/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 201ms]
+  ┌
+  │ 'Time', '2:37:29 PM'
+  │ 'Timestamp', 1600699049651
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 857.67KB, 106ms]
+  ┌
+  │ 'Time', '2:37:29 PM'
+  │ 'Timestamp', 1600699049979
+  │ 'Number of MarketPlans', 11
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 976.71KB, 194ms]
+  ┌
+  │ 'Time', '2:37:30 PM'
+  │ 'Timestamp', 1600699050484
+  │ 'Number of BidCommitments', 641
+  └
+  ✓  GetBidCommitments
+
+Iteration 12/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 161ms]
+  ┌
+  │ 'Time', '2:37:30 PM'
+  │ 'Timestamp', 1600699050831
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 935.62KB, 114ms]
+  ┌
+  │ 'Time', '2:37:31 PM'
+  │ 'Timestamp', 1600699051161
+  │ 'Number of MarketPlans', 12
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1MB, 199ms]
+  ┌
+  │ 'Time', '2:37:31 PM'
+  │ 'Timestamp', 1600699051681
+  │ 'Number of BidCommitments', 673
+  └
+  ✓  GetBidCommitments
+
+Iteration 13/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 153ms]
+  ┌
+  │ 'Time', '2:37:32 PM'
+  │ 'Timestamp', 1600699052018
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1013.56KB, 127ms]
+  ┌
+  │ 'Time', '2:37:32 PM'
+  │ 'Timestamp', 1600699052394
+  │ 'Number of MarketPlans', 13
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.05MB, 216ms]
+  ┌
+  │ 'Time', '2:37:32 PM'
+  │ 'Timestamp', 1600699052943
+  │ 'Number of BidCommitments', 705
+  └
+  ✓  GetBidCommitments
+
+Iteration 14/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 201ms]
+  ┌
+  │ 'Time', '2:37:33 PM'
+  │ 'Timestamp', 1600699053324
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.07MB, 125ms]
+  ┌
+  │ 'Time', '2:37:33 PM'
+  │ 'Timestamp', 1600699053683
+  │ 'Number of MarketPlans', 14
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.1MB, 199ms]
+  ┌
+  │ 'Time', '2:37:34 PM'
+  │ 'Timestamp', 1600699054203
+  │ 'Number of BidCommitments', 737
+  └
+  ✓  GetBidCommitments
+
+Iteration 15/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 219ms]
+  ┌
+  │ 'Time', '2:37:34 PM'
+  │ 'Timestamp', 1600699054606
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.14MB, 131ms]
+  ┌
+  │ 'Time', '2:37:34 PM'
+  │ 'Timestamp', 1600699054971
+  │ 'Number of MarketPlans', 15
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.14MB, 246ms]
+  ┌
+  │ 'Time', '2:37:35 PM'
+  │ 'Timestamp', 1600699055554
+  │ 'Number of BidCommitments', 769
+  └
+  ✓  GetBidCommitments
+
+Iteration 16/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 174ms]
+  ┌
+  │ 'Time', '2:37:35 PM'
+  │ 'Timestamp', 1600699055915
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.22MB, 137ms]
+  ┌
+  │ 'Time', '2:37:36 PM'
+  │ 'Timestamp', 1600699056289
+  │ 'Number of MarketPlans', 16
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.19MB, 256ms]
+  ┌
+  │ 'Time', '2:37:36 PM'
+  │ 'Timestamp', 1600699056842
+  │ 'Number of BidCommitments', 802
+  └
+  ✓  GetBidCommitments
+
+Iteration 17/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 157ms]
+  ┌
+  │ 'Time', '2:37:37 PM'
+  │ 'Timestamp', 1600699057237
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.29MB, 150ms]
+  ┌
+  │ 'Time', '2:37:37 PM'
+  │ 'Timestamp', 1600699057637
+  │ 'Number of MarketPlans', 17
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.24MB, 222ms]
+  ┌
+  │ 'Time', '2:37:38 PM'
+  │ 'Timestamp', 1600699058190
+  │ 'Number of BidCommitments', 834
+  └
+  ✓  GetBidCommitments
+
+Iteration 18/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 203ms]
+  ┌
+  │ 'Time', '2:37:38 PM'
+  │ 'Timestamp', 1600699058646
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.37MB, 167ms]
+  ┌
+  │ 'Time', '2:37:39 PM'
+  │ 'Timestamp', 1600699059062
+  │ 'Number of MarketPlans', 18
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.29MB, 237ms]
+  ┌
+  │ 'Time', '2:37:39 PM'
+  │ 'Timestamp', 1600699059725
+  │ 'Number of BidCommitments', 866
+  └
+  ✓  GetBidCommitments
+
+Iteration 19/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 207ms]
+  ┌
+  │ 'Time', '2:37:40 PM'
+  │ 'Timestamp', 1600699060150
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.45MB, 176ms]
+  ┌
+  │ 'Time', '2:37:40 PM'
+  │ 'Timestamp', 1600699060600
+  │ 'Number of MarketPlans', 19
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.34MB, 255ms]
+  ┌
+  │ 'Time', '2:37:41 PM'
+  │ 'Timestamp', 1600699061250
+  │ 'Number of BidCommitments', 900
+  └
+  ✓  GetBidCommitments
+
+Iteration 20/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 207ms]
+  ┌
+  │ 'Time', '2:37:41 PM'
+  │ 'Timestamp', 1600699061670
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.52MB, 172ms]
+  ┌
+  │ 'Time', '2:37:42 PM'
+  │ 'Timestamp', 1600699062101
+  │ 'Number of MarketPlans', 20
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.39MB, 258ms]
+  ┌
+  │ 'Time', '2:37:42 PM'
+  │ 'Timestamp', 1600699062718
+  │ 'Number of BidCommitments', 934
+  └
+  ✓  GetBidCommitments
+
+Iteration 21/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 218ms]
+  ┌
+  │ 'Time', '2:37:43 PM'
+  │ 'Timestamp', 1600699063159
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.6MB, 187ms]
+  ┌
+  │ 'Time', '2:37:43 PM'
+  │ 'Timestamp', 1600699063608
+  │ 'Number of MarketPlans', 21
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.44MB, 256ms]
+  ┌
+  │ 'Time', '2:37:44 PM'
+  │ 'Timestamp', 1600699064224
+  │ 'Number of BidCommitments', 966
+  └
+  ✓  GetBidCommitments
+
+Iteration 22/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 199ms]
+  ┌
+  │ 'Time', '2:37:44 PM'
+  │ 'Timestamp', 1600699064663
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.67MB, 184ms]
+  ┌
+  │ 'Time', '2:37:45 PM'
+  │ 'Timestamp', 1600699065105
+  │ 'Number of MarketPlans', 22
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.48MB, 260ms]
+  ┌
+  │ 'Time', '2:37:45 PM'
+  │ 'Timestamp', 1600699065760
+  │ 'Number of BidCommitments', 998
+  └
+  ✓  GetBidCommitments
+
+Iteration 23/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 201ms]
+  ┌
+  │ 'Time', '2:37:46 PM'
+  │ 'Timestamp', 1600699066226
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.75MB, 193ms]
+  ┌
+  │ 'Time', '2:37:46 PM'
+  │ 'Timestamp', 1600699066720
+  │ 'Number of MarketPlans', 23
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.53MB, 289ms]
+  ┌
+  │ 'Time', '2:37:47 PM'
+  │ 'Timestamp', 1600699067427
+  │ 'Number of BidCommitments', 1030
+  └
+  ✓  GetBidCommitments
+
+Iteration 24/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 193ms]
+  ┌
+  │ 'Time', '2:37:47 PM'
+  │ 'Timestamp', 1600699067840
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.83MB, 192ms]
+  ┌
+  │ 'Time', '2:37:48 PM'
+  │ 'Timestamp', 1600699068351
+  │ 'Number of MarketPlans', 24
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.58MB, 298ms]
+  ┌
+  │ 'Time', '2:37:48 PM'
+  │ 'Timestamp', 1600699068999
+  │ 'Number of BidCommitments', 1065
+  └
+  ✓  GetBidCommitments
+
+Iteration 25/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 208ms]
+  ┌
+  │ 'Time', '2:37:49 PM'
+  │ 'Timestamp', 1600699069417
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.9MB, 203ms]
+  ┌
+  │ 'Time', '2:37:49 PM'
+  │ 'Timestamp', 1600699069916
+  │ 'Number of MarketPlans', 25
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.63MB, 303ms]
+  ┌
+  │ 'Time', '2:37:50 PM'
+  │ 'Timestamp', 1600699070624
+  │ 'Number of BidCommitments', 1097
+  └
+  ✓  GetBidCommitments
+
+Iteration 26/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 198ms]
+  ┌
+  │ 'Time', '2:37:51 PM'
+  │ 'Timestamp', 1600699071049
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 1.98MB, 214ms]
+  ┌
+  │ 'Time', '2:37:51 PM'
+  │ 'Timestamp', 1600699071653
+  │ 'Number of MarketPlans', 26
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.68MB, 315ms]
+  ┌
+  │ 'Time', '2:37:52 PM'
+  │ 'Timestamp', 1600699072359
+  │ 'Number of BidCommitments', 1132
+  └
+  ✓  GetBidCommitments
+
+Iteration 27/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 206ms]
+  ┌
+  │ 'Time', '2:37:52 PM'
+  │ 'Timestamp', 1600699072814
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.06MB, 217ms]
+  ┌
+  │ 'Time', '2:37:53 PM'
+  │ 'Timestamp', 1600699073345
+  │ 'Number of MarketPlans', 27
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.73MB, 341ms]
+  ┌
+  │ 'Time', '2:37:54 PM'
+  │ 'Timestamp', 1600699074156
+  │ 'Number of BidCommitments', 1166
+  └
+  ✓  GetBidCommitments
+
+Iteration 28/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 201ms]
+  ┌
+  │ 'Time', '2:37:54 PM'
+  │ 'Timestamp', 1600699074575
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.13MB, 222ms]
+  ┌
+  │ 'Time', '2:37:55 PM'
+  │ 'Timestamp', 1600699075213
+  │ 'Number of MarketPlans', 28
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.79MB, 330ms]
+  ┌
+  │ 'Time', '2:37:55 PM'
+  │ 'Timestamp', 1600699075950
+  │ 'Number of BidCommitments', 1200
+  └
+  ✓  GetBidCommitments
+
+Iteration 29/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 208ms]
+  ┌
+  │ 'Time', '2:37:56 PM'
+  │ 'Timestamp', 1600699076426
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.21MB, 224ms]
+  ┌
+  │ 'Time', '2:37:56 PM'
+  │ 'Timestamp', 1600699076963
+  │ 'Number of MarketPlans', 29
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.84MB, 334ms]
+  ┌
+  │ 'Time', '2:37:57 PM'
+  │ 'Timestamp', 1600699077785
+  │ 'Number of BidCommitments', 1234
+  └
+  ✓  GetBidCommitments
+
+Iteration 30/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 206ms]
+  ┌
+  │ 'Time', '2:37:58 PM'
+  │ 'Timestamp', 1600699078217
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.28MB, 234ms]
+  ┌
+  │ 'Time', '2:37:58 PM'
+  │ 'Timestamp', 1600699078855
+  │ 'Number of MarketPlans', 30
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.89MB, 346ms]
+  ┌
+  │ 'Time', '2:37:59 PM'
+  │ 'Timestamp', 1600699079652
+  │ 'Number of BidCommitments', 1268
+  └
+  ✓  GetBidCommitments
+
+Iteration 31/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 196ms]
+  ┌
+  │ 'Time', '2:38:00 PM'
+  │ 'Timestamp', 1600699080162
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.36MB, 243ms]
+  ┌
+  │ 'Time', '2:38:00 PM'
+  │ 'Timestamp', 1600699080735
+  │ 'Number of MarketPlans', 31
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.93MB, 331ms]
+  ┌
+  │ 'Time', '2:38:01 PM'
+  │ 'Timestamp', 1600699081532
+  │ 'Number of BidCommitments', 1299
+  └
+  ✓  GetBidCommitments
+
+Iteration 32/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 197ms]
+  ┌
+  │ 'Time', '2:38:02 PM'
+  │ 'Timestamp', 1600699082010
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.44MB, 267ms]
+  ┌
+  │ 'Time', '2:38:02 PM'
+  │ 'Timestamp', 1600699082606
+  │ 'Number of MarketPlans', 32
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 1.97MB, 365ms]
+  ┌
+  │ 'Time', '2:38:03 PM'
+  │ 'Timestamp', 1600699083433
+  │ 'Number of BidCommitments', 1327
+  └
+  ✓  GetBidCommitments
+
+Iteration 33/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 164ms]
+  ┌
+  │ 'Time', '2:38:03 PM'
+  │ 'Timestamp', 1600699083926
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.51MB, 254ms]
+  ┌
+  │ 'Time', '2:38:04 PM'
+  │ 'Timestamp', 1600699084527
+  │ 'Number of MarketPlans', 33
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.02MB, 376ms]
+  ┌
+  │ 'Time', '2:38:05 PM'
+  │ 'Timestamp', 1600699085372
+  │ 'Number of BidCommitments', 1356
+  └
+  ✓  GetBidCommitments
+
+Iteration 34/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 202ms]
+  ┌
+  │ 'Time', '2:38:05 PM'
+  │ 'Timestamp', 1600699085912
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.59MB, 303ms]
+  ┌
+  │ 'Time', '2:38:06 PM'
+  │ 'Timestamp', 1600699086550
+  │ 'Number of MarketPlans', 34
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.06MB, 379ms]
+  ┌
+  │ 'Time', '2:38:07 PM'
+  │ 'Timestamp', 1600699087406
+  │ 'Number of BidCommitments', 1385
+  └
+  ✓  GetBidCommitments
+
+Iteration 35/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 168ms]
+  ┌
+  │ 'Time', '2:38:07 PM'
+  │ 'Timestamp', 1600699087862
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.66MB, 321ms]
+  ┌
+  │ 'Time', '2:38:08 PM'
+  │ 'Timestamp', 1600699088540
+  │ 'Number of MarketPlans', 35
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.1MB, 472ms]
+  ┌
+  │ 'Time', '2:38:09 PM'
+  │ 'Timestamp', 1600699089518
+  │ 'Number of BidCommitments', 1412
+  └
+  ✓  GetBidCommitments
+
+Iteration 36/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 162ms]
+  ┌
+  │ 'Time', '2:38:09 PM'
+  │ 'Timestamp', 1600699089978
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.74MB, 291ms]
+  ┌
+  │ 'Time', '2:38:10 PM'
+  │ 'Timestamp', 1600699090636
+  │ 'Number of MarketPlans', 36
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.14MB, 397ms]
+  ┌
+  │ 'Time', '2:38:11 PM'
+  │ 'Timestamp', 1600699091537
+  │ 'Number of BidCommitments', 1437
+  └
+  ✓  GetBidCommitments
+
+Iteration 37/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 159ms]
+  ┌
+  │ 'Time', '2:38:12 PM'
+  │ 'Timestamp', 1600699092019
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.82MB, 320ms]
+  ┌
+  │ 'Time', '2:38:12 PM'
+  │ 'Timestamp', 1600699092722
+  │ 'Number of MarketPlans', 37
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.17MB, 475ms]
+  ┌
+  │ 'Time', '2:38:13 PM'
+  │ 'Timestamp', 1600699093813
+  │ 'Number of BidCommitments', 1458
+  └
+  ✓  GetBidCommitments
+
+Iteration 38/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 158ms]
+  ┌
+  │ 'Time', '2:38:14 PM'
+  │ 'Timestamp', 1600699094220
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.89MB, 281ms]
+  ┌
+  │ 'Time', '2:38:15 PM'
+  │ 'Timestamp', 1600699095010
+  │ 'Number of MarketPlans', 38
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.2MB, 415ms]
+  ┌
+  │ 'Time', '2:38:15 PM'
+  │ 'Timestamp', 1600699095925
+  │ 'Number of BidCommitments', 1479
+  └
+  ✓  GetBidCommitments
+
+Iteration 39/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 160ms]
+  ┌
+  │ 'Time', '2:38:16 PM'
+  │ 'Timestamp', 1600699096421
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 2.97MB, 294ms]
+  ┌
+  │ 'Time', '2:38:17 PM'
+  │ 'Timestamp', 1600699097112
+  │ 'Number of MarketPlans', 39
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.23MB, 402ms]
+  ┌
+  │ 'Time', '2:38:18 PM'
+  │ 'Timestamp', 1600699098076
+  │ 'Number of BidCommitments', 1500
+  └
+  ✓  GetBidCommitments
+
+Iteration 40/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 124ms]
+  ┌
+  │ 'Time', '2:38:18 PM'
+  │ 'Timestamp', 1600699098453
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.04MB, 308ms]
+  ┌
+  │ 'Time', '2:38:19 PM'
+  │ 'Timestamp', 1600699099249
+  │ 'Number of MarketPlans', 40
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.26MB, 408ms]
+  ┌
+  │ 'Time', '2:38:20 PM'
+  │ 'Timestamp', 1600699100154
+  │ 'Number of BidCommitments', 1520
+  └
+  ✓  GetBidCommitments
+
+Iteration 41/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 106ms]
+  ┌
+  │ 'Time', '2:38:20 PM'
+  │ 'Timestamp', 1600699100575
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.12MB, 320ms]
+  ┌
+  │ 'Time', '2:38:21 PM'
+  │ 'Timestamp', 1600699101295
+  │ 'Number of MarketPlans', 41
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.29MB, 429ms]
+  ┌
+  │ 'Time', '2:38:22 PM'
+  │ 'Timestamp', 1600699102301
+  │ 'Number of BidCommitments', 1540
+  └
+  ✓  GetBidCommitments
+
+Iteration 42/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 108ms]
+  ┌
+  │ 'Time', '2:38:22 PM'
+  │ 'Timestamp', 1600699102658
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.2MB, 322ms]
+  ┌
+  │ 'Time', '2:38:23 PM'
+  │ 'Timestamp', 1600699103510
+  │ 'Number of MarketPlans', 42
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.32MB, 412ms]
+  ┌
+  │ 'Time', '2:38:24 PM'
+  │ 'Timestamp', 1600699104416
+  │ 'Number of BidCommitments', 1560
+  └
+  ✓  GetBidCommitments
+
+Iteration 43/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 109ms]
+  ┌
+  │ 'Time', '2:38:24 PM'
+  │ 'Timestamp', 1600699104852
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.27MB, 315ms]
+  ┌
+  │ 'Time', '2:38:25 PM'
+  │ 'Timestamp', 1600699105559
+  │ 'Number of MarketPlans', 43
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.35MB, 428ms]
+  ┌
+  │ 'Time', '2:38:26 PM'
+  │ 'Timestamp', 1600699106565
+  │ 'Number of BidCommitments', 1580
+  └
+  ✓  GetBidCommitments
+
+Iteration 44/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 121ms]
+  ┌
+  │ 'Time', '2:38:26 PM'
+  │ 'Timestamp', 1600699106933
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.35MB, 338ms]
+  ┌
+  │ 'Time', '2:38:27 PM'
+  │ 'Timestamp', 1600699107744
+  │ 'Number of MarketPlans', 44
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.38MB, 455ms]
+  ┌
+  │ 'Time', '2:38:28 PM'
+  │ 'Timestamp', 1600699108705
+  │ 'Number of BidCommitments', 1600
+  └
+  ✓  GetBidCommitments
+
+Iteration 45/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 110ms]
+  ┌
+  │ 'Time', '2:38:29 PM'
+  │ 'Timestamp', 1600699109119
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.43MB, 376ms]
+  ┌
+  │ 'Time', '2:38:29 PM'
+  │ 'Timestamp', 1600699109910
+  │ 'Number of MarketPlans', 45
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.41MB, 437ms]
+  ┌
+  │ 'Time', '2:38:30 PM'
+  │ 'Timestamp', 1600699110916
+  │ 'Number of BidCommitments', 1620
+  └
+  ✓  GetBidCommitments
+
+Iteration 46/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 105ms]
+  ┌
+  │ 'Time', '2:38:31 PM'
+  │ 'Timestamp', 1600699111266
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.5MB, 391ms]
+  ┌
+  │ 'Time', '2:38:32 PM'
+  │ 'Timestamp', 1600699112124
+  │ 'Number of MarketPlans', 46
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.44MB, 449ms]
+  ┌
+  │ 'Time', '2:38:33 PM'
+  │ 'Timestamp', 1600699113090
+  │ 'Number of BidCommitments', 1640
+  └
+  ✓  GetBidCommitments
+
+Iteration 47/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 118ms]
+  ┌
+  │ 'Time', '2:38:33 PM'
+  │ 'Timestamp', 1600699113517
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.58MB, 388ms]
+  ┌
+  │ 'Time', '2:38:34 PM'
+  │ 'Timestamp', 1600699114331
+  │ 'Number of MarketPlans', 47
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.47MB, 432ms]
+  ┌
+  │ 'Time', '2:38:35 PM'
+  │ 'Timestamp', 1600699115362
+  │ 'Number of BidCommitments', 1660
+  └
+  ✓  GetBidCommitments
+
+Iteration 48/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 114ms]
+  ┌
+  │ 'Time', '2:38:35 PM'
+  │ 'Timestamp', 1600699115752
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.65MB, 355ms]
+  ┌
+  │ 'Time', '2:38:36 PM'
+  │ 'Timestamp', 1600699116615
+  │ 'Number of MarketPlans', 48
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.5MB, 440ms]
+  ┌
+  │ 'Time', '2:38:37 PM'
+  │ 'Timestamp', 1600699117603
+  │ 'Number of BidCommitments', 1680
+  └
+  ✓  GetBidCommitments
+
+Iteration 49/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 105ms]
+  ┌
+  │ 'Time', '2:38:38 PM'
+  │ 'Timestamp', 1600699118025
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.73MB, 386ms]
+  ┌
+  │ 'Time', '2:38:38 PM'
+  │ 'Timestamp', 1600699118850
+  │ 'Number of MarketPlans', 49
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.53MB, 449ms]
+  ┌
+  │ 'Time', '2:38:39 PM'
+  │ 'Timestamp', 1600699119888
+  │ 'Number of BidCommitments', 1700
+  └
+  ✓  GetBidCommitments
+
+Iteration 50/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 102ms]
+  ┌
+  │ 'Time', '2:38:40 PM'
+  │ 'Timestamp', 1600699120236
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.81MB, 391ms]
+  ┌
+  │ 'Time', '2:38:41 PM'
+  │ 'Timestamp', 1600699121173
+  │ 'Number of MarketPlans', 50
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.56MB, 465ms]
+  ┌
+  │ 'Time', '2:38:42 PM'
+  │ 'Timestamp', 1600699122169
+  │ 'Number of BidCommitments', 1720
+  └
+  ✓  GetBidCommitments
+
+Iteration 51/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 105ms]
+  ┌
+  │ 'Time', '2:38:42 PM'
+  │ 'Timestamp', 1600699122578
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.88MB, 403ms]
+  ┌
+  │ 'Time', '2:38:43 PM'
+  │ 'Timestamp', 1600699123442
+  │ 'Number of MarketPlans', 51
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.59MB, 460ms]
+  ┌
+  │ 'Time', '2:38:44 PM'
+  │ 'Timestamp', 1600699124535
+  │ 'Number of BidCommitments', 1740
+  └
+  ✓  GetBidCommitments
+
+Iteration 52/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 105ms]
+  ┌
+  │ 'Time', '2:38:44 PM'
+  │ 'Timestamp', 1600699124897
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 3.96MB, 416ms]
+  ┌
+  │ 'Time', '2:38:45 PM'
+  │ 'Timestamp', 1600699125882
+  │ 'Number of MarketPlans', 52
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.62MB, 468ms]
+  ┌
+  │ 'Time', '2:38:46 PM'
+  │ 'Timestamp', 1600699126913
+  │ 'Number of BidCommitments', 1760
+  └
+  ✓  GetBidCommitments
+
+Iteration 53/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 105ms]
+  ┌
+  │ 'Time', '2:38:47 PM'
+  │ 'Timestamp', 1600699127388
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 4.03MB, 467ms]
+  ┌
+  │ 'Time', '2:38:48 PM'
+  │ 'Timestamp', 1600699128328
+  │ 'Number of MarketPlans', 53
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.65MB, 464ms]
+  ┌
+  │ 'Time', '2:38:49 PM'
+  │ 'Timestamp', 1600699129421
+  │ 'Number of BidCommitments', 1780
+  └
+  ✓  GetBidCommitments
+
+Iteration 54/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 99ms]
+  ┌
+  │ 'Time', '2:38:49 PM'
+  │ 'Timestamp', 1600699129769
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 4.11MB, 413ms]
+  ┌
+  │ 'Time', '2:38:50 PM'
+  │ 'Timestamp', 1600699130744
+  │ 'Number of MarketPlans', 54
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.68MB, 511ms]
+  ┌
+  │ 'Time', '2:38:51 PM'
+  │ 'Timestamp', 1600699131807
+  │ 'Number of BidCommitments', 1800
+  └
+  ✓  GetBidCommitments
+
+Iteration 55/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 101ms]
+  ┌
+  │ 'Time', '2:38:52 PM'
+  │ 'Timestamp', 1600699132225
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 4.19MB, 416ms]
+  ┌
+  │ 'Time', '2:38:53 PM'
+  │ 'Timestamp', 1600699133108
+  │ 'Number of MarketPlans', 55
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.71MB, 483ms]
+  ┌
+  │ 'Time', '2:38:54 PM'
+  │ 'Timestamp', 1600699134194
+  │ 'Number of BidCommitments', 1820
+  └
+  ✓  GetBidCommitments
+
+Iteration 56/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 102ms]
+  ┌
+  │ 'Time', '2:38:54 PM'
+  │ 'Timestamp', 1600699134548
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 4.26MB, 411ms]
+  ┌
+  │ 'Time', '2:38:55 PM'
+  │ 'Timestamp', 1600699135664
+  │ 'Number of MarketPlans', 56
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.74MB, 512ms]
+  ┌
+  │ 'Time', '2:38:56 PM'
+  │ 'Timestamp', 1600699136851
+  │ 'Number of BidCommitments', 1840
+  └
+  ✓  GetBidCommitments
+
+Iteration 57/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 112ms]
+  ┌
+  │ 'Time', '2:38:57 PM'
+  │ 'Timestamp', 1600699137329
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 4.34MB, 463ms]
+  ┌
+  │ 'Time', '2:38:58 PM'
+  │ 'Timestamp', 1600699138453
+  │ 'Number of MarketPlans', 57
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.77MB, 504ms]
+  ┌
+  │ 'Time', '2:38:59 PM'
+  │ 'Timestamp', 1600699139627
+  │ 'Number of BidCommitments', 1860
+  └
+  ✓  GetBidCommitments
+
+Iteration 58/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 112ms]
+  ┌
+  │ 'Time', '2:39:00 PM'
+  │ 'Timestamp', 1600699140069
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 4.42MB, 454ms]
+  ┌
+  │ 'Time', '2:39:01 PM'
+  │ 'Timestamp', 1600699141116
+  │ 'Number of MarketPlans', 58
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.8MB, 496ms]
+  ┌
+  │ 'Time', '2:39:02 PM'
+  │ 'Timestamp', 1600699142282
+  │ 'Number of BidCommitments', 1880
+  └
+  ✓  GetBidCommitments
+
+Iteration 59/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 105ms]
+  ┌
+  │ 'Time', '2:39:02 PM'
+  │ 'Timestamp', 1600699142713
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 4.49MB, 432ms]
+  ┌
+  │ 'Time', '2:39:03 PM'
+  │ 'Timestamp', 1600699143730
+  │ 'Number of MarketPlans', 59
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.83MB, 529ms]
+  ┌
+  │ 'Time', '2:39:05 PM'
+  │ 'Timestamp', 1600699145010
+  │ 'Number of BidCommitments', 1900
+  └
+  ✓  GetBidCommitments
+
+Iteration 60/60
+
+→ MarketPlan
+  POST http://localhost:8888/MarketPlan [200 OK, 496B, 117ms]
+  ┌
+  │ 'Time', '2:39:05 PM'
+  │ 'Timestamp', 1600699145426
+  └
+  ✓  MarketPlan
+
+→ GetMarketPlans
+  GET http://localhost:8888/GetMarketPlans [200 OK, 4.57MB, 471ms]
+  ┌
+  │ 'Time', '2:39:06 PM'
+  │ 'Timestamp', 1600699146588
+  │ 'Number of MarketPlans', 60
+  └
+  ✓  GetMarketPlans
+
+→ GetBidCommitments
+  GET http://localhost:8888/GetBidCommitments [200 OK, 2.86MB, 603ms]
+  ┌
+  │ 'Time', '2:39:07 PM'
+  │ 'Timestamp', 1600699147941
+  │ 'Number of BidCommitments', 1920
+  └
+  ✓  GetBidCommitments
+
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                 60 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                180 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                180 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                 60 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                180 │                  0 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 1m 49s                                        │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 247.06MB (approx)                            │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 251ms [min: 41ms, max: 603ms, s.d.: 127ms] │
+└───────────────────────────────────────────────────────────────────┘

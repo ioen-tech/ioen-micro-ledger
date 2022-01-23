@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "35c8a054-771b-489b-ab69-48f664257820",
+		"name": "tem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Contract",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Create Contract', function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"revisionId\": 3,\n  \"contractNumber\": \"AP34/MEMO7/VIC\",\n  \"source\": \"cloud\",\n  \"destination\": \"edge-0\",\n  \"type\": \"type1\",\n  \"active\": \"active\",\n  \"validFrom\": 1596002520000,\n  \"validTo\": 1596002520000,\n  \"payload\": {\n    \"sample\": \"yes\"\n  },\n  \"status\": \"status0\",\n  \"revisionNumber\": \"revision0\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8888/Contract",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"Contract"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contracts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Get Contracts', function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"    pm.expect(pm.response.json().Contracts.length).to.equal(1);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "start-time",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"destination\": \"edge-0\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/GetContracts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetContracts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Receipts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Get Receipts', function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"    pm.expect(pm.response.json().Receipts.length).to.equal(1);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "start-time",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/GetReceipts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetReceipts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Create Message', function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"})",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"messageId\": 6,\n  \"contractId\": 3,\n  \"source\": \"cloud\",\n  \"destination\": \"edge-0\",\n  \"type\": \"type1\",\n  \"messageTime\": 1596002520000,\n  \"payload\": {\n    \"sample\": \"yes\"\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/Message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"Message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"let filter = {};",
+							"",
+							"pm.environment.set('filter', JSON.stringify(filter));",
+							"pm.test('Get Messages', function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"    pm.expect(pm.response.json().Messages.length).to.equal(1);",
+							"}) "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "start-time",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{filter}}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/GetMessages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"GetMessages"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "destination",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,97 @@
+Attaching to ubuntu_conductor_1, ubuntu_express1_1
+[36mconductor_1  |[0m Conductor ready.
+[36mconductor_1  |[0m Installing instances on ports: 1235
+[36mconductor_1  |[0m The application is not installed, installing now...
+[36mconductor_1  |[0m Successfully installed instance
+[36mconductor_1  |[0m Successfully attached interface
+[33mexpress1_1   |[0m This node is a Bidder
+[33mexpress1_1   |[0m Failed to connect to Market at ws://118.138.243.49:8888. wait 5s and try again...
+[33mexpress1_1   |[0m Failed to connect to Market at ws://118.138.243.49:8888. wait 5s and try again...
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:58:30 PM] Log:  [
+[33mexpress1_1   |[0m   'Trying to connect with the holochain conductor at ws://conductor:1111...'
+[33mexpress1_1   |[0m ]
+[33mexpress1_1   |[0m Failed to connect to Market at ws://118.138.243.49:8888. wait 5s and try again...
+[33mexpress1_1   |[0m Successfully connected to the conductor!
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:58:30 PM] Log:  [ 'Connected! Listening on port 8888' ]
+[33mexpress1_1   |[0m Failed to connect to Market at ws://118.138.243.49:8888. wait 5s and try again...
+[33mexpress1_1   |[0m Failed to connect to Market at ws://118.138.243.49:8888. wait 5s and try again...
+[33mexpress1_1   |[0m Failed to connect to Market at ws://118.138.243.49:8888. wait 5s and try again...
+[33mexpress1_1   |[0m Connected to a Market (118.138.243.49:8888)!
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Log:  [ '[REQUEST] Received request: ', 'BidCommitment' ]
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Debug:  [
+[33mexpress1_1   |[0m   'Received new post request: ',
+[33mexpress1_1   |[0m   'BidCommitment',
+[33mexpress1_1   |[0m   'with id ',
+[33mexpress1_1   |[0m   '54568c3f-512e-421a-9645-4bed3b39189b'
+[33mexpress1_1   |[0m ]
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Debug:  [
+[33mexpress1_1   |[0m   'Calling the holochain conductor: ',
+[33mexpress1_1   |[0m   [
+[33mexpress1_1   |[0m     {
+[33mexpress1_1   |[0m       hash: <Buffer 08 71 45 a4 0d df 01 c6 ef f6 ed 61 98 1e 3d 74 08 dd f8 23 7c b4 88 9c e3 cb 09 a9 b6 f1 d9 fc 0e 33 46 42>,
+[33mexpress1_1   |[0m       hash_type: <Buffer 84 2d 24>
+[33mexpress1_1   |[0m     },
+[33mexpress1_1   |[0m     {
+[33mexpress1_1   |[0m       hash: <Buffer c3 ec eb b6 d8 98 a5 d7 c0 61 7e 1f 47 a5 bc 0c f5 1d 85 e6 49 fb 54 2c 44 0e 1c 4c 89 a6 cd 36 14 70 ea f8>,
+[33mexpress1_1   |[0m       hash_type: <Buffer 84 20 24>
+[33mexpress1_1   |[0m     }
+[33mexpress1_1   |[0m   ],
+[33mexpress1_1   |[0m   'men',
+[33mexpress1_1   |[0m   'create_bid_commitment',
+[33mexpress1_1   |[0m   '{"id":"54568c3f-512e-421a-9645-4bed3b39189b","agentId":"netzeroagent20","requestId":"fadc9a74-fe97-4f89-a8ca-4f6a970ed390","responseId":"30bdc75a-e0d3-4873-b664-c146e9d3b524","statusId":"be8b9aac-52ca-4353-8cf1-b858d7de360d","marketType":"flex","committedIntervals":[{"id":"4be59ca4-b8e6-471f-8e72-31db03c57d65","responseIntervalId":"4af608ec-4025-4120-85f9-bc6f58794963","status":"ACCEPT","startTime":1597201500000,"endTime":1597201560000,"clearedPrice":1.4496286,"clearedQuantity":19.819084},{"id":"2ab8beae-59b9-4538-8eb1-531e3673d043","responseIntervalId":"fc3e6e7d-0590-4434-a817-84301afc49bd","status":"ACCEPT","startTime":1597201560000,"endTime":1597201620000,"clearedPrice":1.4496286,"clearedQuantity":19.845268},{"id":"b6d070a8-af63-49e8-96d4-1f5838948803","responseIntervalId":"4b5dba06-6d5f-4dc0-a580-9ba689463259","status":"ACCEPT","startTime":1597201620000,"endTime":1597201680000,"clearedPrice":1.4496286,"clearedQuantity":19.871613},{"id":"75a8a3f8-319e-4e63-839a-32bccb93ddb7","responseIntervalId":"e064a0bc-a111-4486-bbeb-679d77c99fa1","status":"ACCEPT","startTime":1597201680000,"endTime":1597201740000,"clearedPrice":1.4496286,"clearedQuantity":19.898117},{"id":"0ccfe59b-4d58-4ff6-92d1-1aff58258e7b","responseIntervalId":"2bfde968-2271-44c8-ac84-9da51076e44f","status":"ACCEPT","startTime":1597201740000,"endTime":1597201800000,"clearedPrice":1.4496286,"clearedQuantity":19.924782}]}'
+[33mexpress1_1   |[0m ]
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Debug:  [
+[33mexpress1_1   |[0m   '[REQUEST] Response from the holochain conductor in : 0.022',
+[33mexpress1_1   |[0m   {
+[33mexpress1_1   |[0m     hash: <Buffer d3 09 fe d6 04 ee 9d c2 6e 25 5b 90 86 64 46 39 9b 65 10 05 89 83 57 d3 22 2e ba a6 31 24 26 29 f1 13 aa 4c>,
+[33mexpress1_1   |[0m     hash_type: <Buffer 84 21 24>
+[33mexpress1_1   |[0m   }
+[33mexpress1_1   |[0m ]
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Debug:  [
+[33mexpress1_1   |[0m   'Relaying result of the request: ',
+[33mexpress1_1   |[0m   {
+[33mexpress1_1   |[0m     BidCommitmentAddress: {
+[33mexpress1_1   |[0m       hash: <Buffer d3 09 fe d6 04 ee 9d c2 6e 25 5b 90 86 64 46 39 9b 65 10 05 89 83 57 d3 22 2e ba a6 31 24 26 29 f1 13 aa 4c>,
+[33mexpress1_1   |[0m       hash_type: <Buffer 84 21 24>
+[33mexpress1_1   |[0m     }
+[33mexpress1_1   |[0m   }
+[33mexpress1_1   |[0m ]
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Log:  [
+[33mexpress1_1   |[0m   '[REQUEST] Request result in 0.037s: Successfully handled request, result: ',
+[33mexpress1_1   |[0m   {
+[33mexpress1_1   |[0m     BidCommitmentAddress: {
+[33mexpress1_1   |[0m       hash: <Buffer d3 09 fe d6 04 ee 9d c2 6e 25 5b 90 86 64 46 39 9b 65 10 05 89 83 57 d3 22 2e ba a6 31 24 26 29 f1 13 aa 4c>,
+[33mexpress1_1   |[0m       hash_type: <Buffer 84 21 24>
+[33mexpress1_1   |[0m     }
+[33mexpress1_1   |[0m   }
+[33mexpress1_1   |[0m ]
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Log:  [ '[REQUEST] Received request: ', 'GetBidCommitments' ]
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Debug:  [
+[33mexpress1_1   |[0m   'Calling the holochain conductor: ',
+[33mexpress1_1   |[0m   [
+[33mexpress1_1   |[0m     {
+[33mexpress1_1   |[0m       hash: <Buffer 08 71 45 a4 0d df 01 c6 ef f6 ed 61 98 1e 3d 74 08 dd f8 23 7c b4 88 9c e3 cb 09 a9 b6 f1 d9 fc 0e 33 46 42>,
+[33mexpress1_1   |[0m       hash_type: <Buffer 84 2d 24>
+[33mexpress1_1   |[0m     },
+[33mexpress1_1   |[0m     {
+[33mexpress1_1   |[0m       hash: <Buffer c3 ec eb b6 d8 98 a5 d7 c0 61 7e 1f 47 a5 bc 0c f5 1d 85 e6 49 fb 54 2c 44 0e 1c 4c 89 a6 cd 36 14 70 ea f8>,
+[33mexpress1_1   |[0m       hash_type: <Buffer 84 20 24>
+[33mexpress1_1   |[0m     }
+[33mexpress1_1   |[0m   ],
+[33mexpress1_1   |[0m   'men',
+[33mexpress1_1   |[0m   'query_bid_commitments',
+[33mexpress1_1   |[0m   { start_time: undefined, end_time: undefined }
+[33mexpress1_1   |[0m ]
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Debug:  [
+[33mexpress1_1   |[0m   '[REQUEST] Response from the holochain conductor in : 0.007',
+[33mexpress1_1   |[0m   [
+[33mexpress1_1   |[0m     [
+[33mexpress1_1   |[0m       '{"id":"54568c3f-512e-421a-9645-4bed3b39189b","agentId":"netzeroagent20","requestId":"fadc9a74-fe97-4f89-a8ca-4f6a970ed390","responseId":"30bdc75a-e0d3-4873-b664-c146e9d3b524","statusId":"be8b9aac-52ca-4353-8cf1-b858d7de360d","marketType":"flex","committedIntervals":[{"id":"4be59ca4-b8e6-471f-8e72-31db03c57d65","responseIntervalId":"4af608ec-4025-4120-85f9-bc6f58794963","status":"ACCEPT","startTime":1597201500000,"endTime":1597201560000,"clearedPrice":1.4496286,"clearedQuantity":19.819084},{"id":"2ab8beae-59b9-4538-8eb1-531e3673d043","responseIntervalId":"fc3e6e7d-0590-4434-a817-84301afc49bd","status":"ACCEPT","startTime":1597201560000,"endTime":1597201620000,"clearedPrice":1.4496286,"clearedQuantity":19.845268},{"id":"b6d070a8-af63-49e8-96d4-1f5838948803","responseIntervalId":"4b5dba06-6d5f-4dc0-a580-9ba689463259","status":"ACCEPT","startTime":1597201620000,"endTime":1597201680000,"clearedPrice":1.4496286,"clearedQuantity":19.871613},{"id":"75a8a3f8-319e-4e63-839a-32bccb93ddb7","responseIntervalId":"e064a0bc-a111-4486-bbeb-679d77c99fa1","status":"ACCEPT","startTime":1597201680000,"endTime":1597201740000,"clearedPrice":1.4496286,"clearedQuantity":19.898117},{"id":"0ccfe59b-4d58-4ff6-92d1-1aff58258e7b","responseIntervalId":"2bfde968-2271-44c8-ac84-9da51076e44f","status":"ACCEPT","startTime":1597201740000,"endTime":1597201800000,"clearedPrice":1.4496286,"clearedQuantity":19.924782}]}',
+[33mexpress1_1   |[0m       [Array]
+[33mexpress1_1   |[0m     ]
+[33mexpress1_1   |[0m   ]
+[33mexpress1_1   |[0m ]
+[33mexpress1_1   |[0m [Date: 9/21/2020, 4:59:19 PM] Log:  [
+[33mexpress1_1   |[0m   '[REQUEST] Request result in 0.021s: Successfully handled request, result: ',
+[33mexpress1_1   |[0m   { BidCommitments: [ [Object] ] }
+[33mexpress1_1   |[0m ]
