@@ -24,6 +24,14 @@ This includes:
 - https://github.com/ioen-tech/ioen-discovery
 - https://github.com/ioen-tech/ioen-ledger-report-generator
 
+## Acceptance criteria
+1. Query an agent, get its agent ID
+2. Send a record to the agent
+3. Fetch a record from the agent
+4. Fetch a record from the agent for a time period
+5. Send a message from one agent to another, confirm the other agent received it
+6. Spin up many agents and run the performance tests
+
 ## This version
 0.1 is very primitive (it has been adapted from a commercial project so functionality has been removed).  Future functionality will include:
 - Discovery of other agents
