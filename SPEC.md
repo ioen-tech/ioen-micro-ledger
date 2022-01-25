@@ -9,6 +9,8 @@ with one agent.  This means:
 - provide the API to fetch one or more records from one agent.  The records are retrieved based on the agent ID, and allow a timeframe
 -- `give me all records on this agent between timestamp m and timestamp n, where m > n`
 - performance tests
+- scripts to spin up virtual machines based on IP address
+- creation of a Docker container
 
 ## Technology
 This includes:
