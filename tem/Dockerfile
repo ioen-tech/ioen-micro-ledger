@@ -1,4 +1,4 @@
-FROM guillemcordoba/rsm:a6ac043
+FROM ioen/rsm:a6ac043
 
 RUN apt-get update && apt-get install -y curl net-tools iproute2
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
