@@ -46,4 +46,4 @@ HERE
 
 # Login with docker
 # This is a fake docker account created only for the purpose of being able to pull the images from the remote nodes
-ssh -v -i IOENTest.txt ubuntu@$NODE_IP "docker login -u guillemcordoba2 -p dockerguillemcordoba2"
+ssh -v -i IOENTest.txt ubuntu@$NODE_IP "docker login -u ioen-tech -p xxxxx"
