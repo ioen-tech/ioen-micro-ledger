@@ -49,7 +49,7 @@ If you're restarting the conductor, you may want to delete the database in disk,
 ```bash
 cd tem/scripts/install-instances
 npm install # If this is the first run
-PORTS=1111 DNA_PATH=/home/guillem/projects/redgrid/MonashTEM/tem/dna/tem.dna.gz node index.js
+PORTS=1111 DNA_PATH=~/projects/ioen-ledger/tem/dna/tem.dna.gz node index.js
 ```
 
 The `DNA_PATH` should be adjusted to your needs, to point to the `men.dna.gz` file that you have locally
@@ -71,13 +71,13 @@ replace `.x` with the next incremental number, when you run the `docker build ..
 
 ```bash
 cd tem
-docker build . -t guillemcordoba/ledger:ledger-0.x
+docker build . -t ioen/ioen-ledger:ledger-0.x
 ```
 
 ### Push to docker hub
 
 ```bash
-docker push guillemcordoba/ledger:ledger-0.x
+docker push ioen/ioen-ledger:ledger-0.x
 ```
 
 ### Docker compose files
