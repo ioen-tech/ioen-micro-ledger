@@ -49,10 +49,10 @@ If you're restarting the conductor, you may want to delete the database in disk,
 ```bash
 cd tem/scripts/install-instances
 npm install # If this is the first run
-PORTS=1111 DNA_PATH=~/projects/ioen-ledger/tem/dna/tem.dna.gz node index.js
+PORTS=1111 DNA_PATH=~/projects/ioen-ledger/tem/dna/tem.dna node index.js
 ```
 
-The `DNA_PATH` should be adjusted to your needs, to point to the `men.dna.gz` file that you have locally
+The `DNA_PATH` should be adjusted to your needs, to point to the `tem.dna` file that you have locally
 
 The `PORTS` variable is the port in which the instance of the app is going to be running.
 
@@ -96,14 +96,14 @@ cd docker/cloud/
 docker-compose up
 ```
 
-Then in another terminal: 
+Then in another terminal:
 
 ```bash
 cd docker/edge-0/
 docker-compose up
 ```
 
-Then in another terminal: 
+Then in another terminal:
 
 ```bash
 cd docker/edge-1/
