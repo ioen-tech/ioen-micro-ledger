@@ -1,12 +1,12 @@
 [package]
 authors = ["redgridone"]
 edition = "2018"
-name = "tem"
+name = "ledger"
 version = "0.0.1"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
-name = "tem"
+name = "ledger"
 
 [dependencies]
 derive_more = "0"

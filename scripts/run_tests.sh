@@ -14,7 +14,7 @@ echo - >> ~/testresults/system_usage.txt
 echo Begin requests >> ~/testresults/system_usage.txt
 echo - >> ~/testresults/system_usage.txt
 
-newman run ~/scripts/tem-Agent.postman_collection.json -n $ITERATIONS --delay-request $DELAY > ~/testresults/test_results.txt
+newman run ~/scripts/ledger-Agent.postman_collection.json -n $ITERATIONS --delay-request $DELAY > ~/testresults/test_results.txt
 echo - >> ~/testresults/system_usage.txt
 echo Idle >> ~/testresults/system_usage.txt
 echo - >> ~/testresults/system_usage.txt

@@ -13,7 +13,7 @@ import {
 } from "@holochain/tryorama";
 import Base64 from "js-base64";
 
-const dnaTem = path.join(__dirname, "../../../dna/workdir/dna/tem.dna");
+const dnaTem = path.join(__dirname, "../../../dna/workdir/dna/ledger.dna");
 
 const network = {
   transport_pool: [

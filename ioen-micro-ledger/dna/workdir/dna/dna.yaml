@@ -1,0 +1,8 @@
+---
+manifest_version: "1"
+name: ledger
+uuid: ~
+properties: ~
+zomes: 
+  - name: ledger
+    bundled: ../../target/wasm32-unknown-unknown/release/ledger.wasm
