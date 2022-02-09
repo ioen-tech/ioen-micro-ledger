@@ -30,9 +30,6 @@ export default function test(orchestrator) {
       contracts = await getContracts(cloud.relayer.port, {});
       t.equals(contracts.length, 1);
 
-      let receipts = await getReceipts(cloud.relayer.port, {});
-      t.equals(receipts.length, 1);
-
       await createContract(
         cloud.relayer.port,
         2,
@@ -51,16 +48,22 @@ export default function test(orchestrator) {
       });
       t.equals(contracts.length, 1);
 
+      contracts = await getContracts(cloud.relayer.port, {
+        destination: edge1.applicationId,
+      });
+      t.equals(contracts.length, 1);
+
       // Trying to create a receipt for a non-existent contract
       const error = await createReceipt(edge1.relayer.port, 0);
       t.notOk(error.length);
 
       await createReceipt(edge1.relayer.port, 1);
+      await createReceipt(edge1.relayer.port, 1, "type4");
       await createReceipt(edge2.relayer.port, 2, "type5");
       await sleep(2000);
 
-      receipts = await getReceipts(cloud.relayer.port, {});
-      t.equals(receipts.length, 4);
+      let receipts = await getReceipts(cloud.relayer.port, {});
+      t.equals(receipts.length, 3);
 
       receipts = await getReceipts(cloud.relayer.port, {
         type: "type5",

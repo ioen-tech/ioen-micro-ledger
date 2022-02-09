@@ -53,13 +53,14 @@ export async function createReceipt(port, contractId, type = receipt.type) {
 export async function getReceipts(port, filter) {
   let result = await fetch(`http://localhost:${port}/GetReceipts`, {
     method: "POST",
-
     body: JSON.stringify(filter),
     headers: {
       "Content-Type": "application/json",
     },
   });
   const response = await result.json();
+  console.log("RESPONSE")
+  console.log(response.Receipts)
   return response.Receipts;
 }
 

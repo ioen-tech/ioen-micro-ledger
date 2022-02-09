@@ -33,7 +33,7 @@ fn who_am_i(_: ()) -> ExternResult<AgentPubKey> {
 entry_defs![
     CloudEdgeAssociation::entry_def(),
     EncryptedDataWrapper::entry_def(),
-    Path::entry_def()
+    PathEntry::entry_def()
 ];
 
 #[hdk_extern]

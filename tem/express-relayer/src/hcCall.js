@@ -6,8 +6,8 @@ async function hcCall(fnName, params) {
   const startTime = Date.now();
 
   const { socket, cellId } = await getAppWebsocket();
-  debug("Calling the holochain conductor: ", cellId, ZOME, fnName, params);
-
+  console.log("Calling the holochain conductor: ", cellId, ZOME, fnName, params);
+  console.log(cellId)
   try {
     const result = await socket.callZome({
       cap: null,
@@ -18,7 +18,7 @@ async function hcCall(fnName, params) {
       provenance: cellId[1],
     });
 
-    debug(
+    console.log(
       `[REQUEST] Response from the holochain conductor in : ${
         (Date.now() - startTime) / 1000
       }`,
