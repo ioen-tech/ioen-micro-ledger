@@ -1,4 +1,4 @@
-const { AppWebsocket } = require("@holochain/conductor-api");
+const { AppWebsocket } = require("@holochain/client");
 
 const { CONDUCTOR_URL } = require("./constants");
 let socket = undefined;

@@ -96,7 +96,6 @@ pub fn get_encrypted_entries_for_edge(
     let links = get_links(edge_hash, Some(LinkTag::new(entry_type.as_str())))?;
 
     let elements: Vec<Element> = links
-        .into_inner()
         .into_iter()
         .map(|link| {
             let maybe_element = get(link.target, GetOptions::default())?;

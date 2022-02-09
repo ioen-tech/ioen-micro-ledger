@@ -107,7 +107,7 @@ fn find_my_node_type(register_market_node_links: &Vec<CreateLink>) -> ExternResu
             let agent_info = agent_info()?;
             let agent_pub_key: EntryHash = agent_info.agent_initial_pubkey.into();
 
-            let base_is_path = create_link.base_address == all_clouds_path().hash()?;
+            let base_is_path = create_link.base_address == all_clouds_path().path_entry_hash()?;
             let target_is_me = agent_pub_key == create_link.target_address;
 
             match base_is_path && target_is_me {

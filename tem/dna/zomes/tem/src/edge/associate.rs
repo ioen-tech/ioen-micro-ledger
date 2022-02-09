@@ -26,8 +26,8 @@ pub fn associate_with_cloud(my_application_id: ApplicationId) -> ExternResult<()
         Some(cloud_node) => {
             let association = request_associate_to_cloud(cloud_node.clone(), my_application_id)?;
 
-            let mut functions: GrantedFunctions = HashSet::new();
-            functions.insert((zome_info()?.zome_name, "recv_remote_signal".into()));
+            let mut functions: GrantedFunctions = BTreeSet::new();
+            functions.insert((zome_info()?.name, "recv_remote_signal".into()));
 
             create_cap_grant(CapGrantEntry {
                 tag: "".into(),
@@ -55,7 +55,7 @@ fn request_associate_to_cloud(
 
     let response: ZomeCallResponse = call_remote(
         cloud_node,
-        zome_info.zome_name,
+        zome_info.name,
         FunctionName(HANDLE_EDGE_ASSOCIATON_FN_NAME.into()),
         None,
         &NodeId(my_application_id, agent_info.agent_initial_pubkey),
@@ -69,6 +69,12 @@ fn request_associate_to_cloud(
         ZomeCallResponse::NetworkError(error) => {
             Err(err(format!("Network Error: {}", error).as_str()))
         }
-        ZomeCallResponse::Unauthorized(_, _, _, _) => Err(err("Unauthorized call remote")),
+        ZomeCallResponse::Unauthorized(_, _, _, _) => {
+            Err(err("Unauthorized call remote"))
+        }
+        ZomeCallResponse::CountersigningSession(e) => Err(WasmError::Guest(format!(
+            "Countersigning session failed: {}",
+            e
+        )))
     }
 }

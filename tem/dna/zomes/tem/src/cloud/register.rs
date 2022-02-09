@@ -36,7 +36,7 @@ pub fn register_as_cloud(my_application_id: ApplicationId) -> ExternResult<()> {
 
     let sb: SerializedBytes = my_application_id.try_into()?;
 
-    create_link(path.hash()?, any_dht_hash.into(), sb.bytes().clone())?;
+    create_link(path.path_entry_hash()?, any_dht_hash.into(), sb.bytes().clone())?;
 
     Ok(())
 }
@@ -65,9 +65,9 @@ pub fn handle_edge_association(edge_id: NodeId) -> ExternResult<CloudEdgeAssocia
 /** Helper functions */
 
 fn create_unrestricted_cap_grants() -> ExternResult<()> {
-    let mut functions: GrantedFunctions = HashSet::new();
+    let mut functions: GrantedFunctions = BTreeSet::new();
     functions.insert((
-        zome_info()?.zome_name,
+        zome_info()?.name,
         HANDLE_EDGE_ASSOCIATON_FN_NAME.into(),
     ));
 

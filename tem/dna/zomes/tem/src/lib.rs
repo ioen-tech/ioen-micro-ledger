@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 use hdk::prelude::*;
-use holo_hash::AgentPubKeyB64;
 
 use common::{
     encrypted_data::{self, EncryptedDataWrapper},
@@ -25,10 +24,10 @@ pub fn err(reason: &str) -> WasmError {
 }
 
 #[hdk_extern]
-fn who_am_i(_: ()) -> ExternResult<AgentPubKeyB64> {
+fn who_am_i(_: ()) -> ExternResult<AgentPubKey> {
     let agent_info = agent_info()?;
 
-    Ok(AgentPubKeyB64::from(agent_info.agent_initial_pubkey))
+    Ok(AgentPubKey::from(agent_info.agent_initial_pubkey))
 }
 
 entry_defs![

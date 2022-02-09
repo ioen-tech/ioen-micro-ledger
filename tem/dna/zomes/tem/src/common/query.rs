@@ -30,7 +30,7 @@ pub fn query_elements<T: EntryDefRegistration>(
     let filter = ChainQueryFilter::new()
         .entry_type(EntryType::App(AppEntryType::new(
             entry_def_index!(T)?,
-            zome_info()?.zome_id,
+            zome_info()?.id,
             EntryVisibility::Private,
         )))
         .header_type(HeaderType::Create)

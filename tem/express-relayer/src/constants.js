@@ -6,6 +6,7 @@ const IS_CLOUD =
   process.env.IS_CLOUD === "true" || process.env.IS_CLOUD === "1";
 const CONDUCTOR_URL = process.env.CONDUCTOR_URL;
 
+console.log(APPLICATION_ID)
 if (!APPLICATION_ID) throw new Error('APPLICATION_ID is not set: you must set it as an environment variable in the docker-compose')
 
 module.exports = {

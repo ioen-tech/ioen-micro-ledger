@@ -27,7 +27,7 @@ pub fn recv_remote_signal(signal: ExternIO) -> ExternResult<()> {
         SignalPayload::ContractCreated { contract, .. } => {
             let now = sys_time()?;
 
-            let event_time = Utc.timestamp(now.as_secs() as i64, now.subsec_nanos());
+            let event_time = Utc.timestamp(now.as_micros(), 0);
 
             let receipt_id = query_number_of_committed_encrypted_objects::<Receipt>()?;
 

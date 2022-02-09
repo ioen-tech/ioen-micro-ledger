@@ -6,7 +6,7 @@ use hdk::prelude::*;
 pub fn get_cloud_node() -> ExternResult<Option<AgentPubKey>> {
     let path = all_clouds_path();
 
-    let links = get_links(path.hash()?, None)?.into_inner();
+    let links = get_links(path.path_entry_hash()?, None)?;
 
     match links.len() {
         0 => Ok(None),

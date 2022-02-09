@@ -1,6 +1,4 @@
 use chrono::{DateTime, Duration, Utc};
-use holo_hash::AgentPubKeyB64;
-
 use crate::common::node_info::ApplicationId;
 use hdk::prelude::*;
 
@@ -30,8 +28,8 @@ pub trait QueryFilter {
     }
 
     fn filter_by_pub_key(
-        actual_value: &AgentPubKeyB64,
-        filter_value: &Option<AgentPubKeyB64>,
+        actual_value: &AgentPubKey,
+        filter_value: &Option<AgentPubKey>,
     ) -> bool {
         if let Some(filter) = filter_value {
             if !actual_value.eq(filter) {
