@@ -37,7 +37,7 @@ async function getCellId() {
 
   const { socket } = await getAppWebsocket();
 
-  const appInfo = await socket.appInfo({ installed_app_id: "tem" });
+  const appInfo = await socket.appInfo({ installed_app_id: "ledger" });
   console.log("appInfo")
   console.log(appInfo)
   return appInfo.cell_data[0].cell_id;

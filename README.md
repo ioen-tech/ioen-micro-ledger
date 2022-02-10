@@ -13,20 +13,20 @@ The version of Holochain we have currently built and tested to is version 0.0.12
 ## Compiling
 
 ```bash
-cd tem/dna
+cd ledger/dna
 CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown
 hc dna pack workdir/dna
 hc app pack workdir/happ
 ```
 
-This will output a `tem.happ` dna binary in the `tem/dna/workdir/happ` folder.
+This will output a `ledger.happ` dna binary in the `ledger/dna/workdir/happ` folder.
 
 ## Running the tests
 
 After compiling, to run the tests:
 
 ```bash
-cd tem/tests
+cd ledger/tests
 npm install # if this is first run
 npm test
 ```
@@ -47,18 +47,18 @@ If you're restarting the conductor, you may want to delete the database in disk,
 
 - Second terminal:
 ```bash
-cd tem/scripts/install-instances
+cd ledger/scripts/install-instances
 npm install # If this is the first run
-PORTS=1111 DNA_PATH=~/projects/ioen-ledger/tem/dna/tem.dna node index.js
+PORTS=1111 DNA_PATH=~/projects/ioen-ledger/ledger/dna/ledger.dna node index.js
 ```
 
-The `DNA_PATH` should be adjusted to your needs, to point to the `tem.dna` file that you have locally
+The `DNA_PATH` should be adjusted to your needs, to point to the `ledger.dna` file that you have locally
 
 The `PORTS` variable is the port in which the instance of the app is going to be running.
 
 - Third terminal:
 ```bash
-cd tem/express-relayer
+cd ledger/express-relayer
 npm install # If this is the first run
 CONDUCTOR_URL=ws://localhost:1111 DEBUG=true node index.js
 ```
@@ -70,7 +70,7 @@ CONDUCTOR_URL=ws://localhost:1111 DEBUG=true node index.js
 replace `.x` with the next incremental number, when you run the `docker build ...` command.
 
 ```bash
-cd tem
+cd ledger
 docker build . -t ioen/ioen-ledger:ledger-0.x
 ```
 

@@ -13,7 +13,7 @@ sleep 30
 TIMESTAMP=$( date +%T )
 echo $TIMESTAMP Begin requests >> ~/testresults/idle.txt
 
-newman run ~/scripts/tem-Market.postman_collection.json -n $ITERATIONS --delay-request $DELAY > ~/testresults/test_results.txt
+newman run ~/scripts/ledger-Market.postman_collection.json -n $ITERATIONS --delay-request $DELAY > ~/testresults/test_results.txt
 
 TIMESTAMP=$( date +%T )
 echo $TIMESTAMP Idle >> ~/testresults/idle.txt

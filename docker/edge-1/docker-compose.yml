@@ -7,7 +7,7 @@ services:
     volumes:
       - type: volume
         source: ledgerdata3
-        target: /tem/databases
+        target: /ledger/databases
     environment:
       APPLICATION_ID: "edge-1"
       PORT: 8890

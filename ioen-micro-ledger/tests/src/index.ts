@@ -8,7 +8,7 @@ const orchestrator = new Orchestrator();
 if (process.env.STRESS) {
   stress(orchestrator);
 } else {
-  // contracts(orchestrator);
+  contracts(orchestrator);
   messages(orchestrator);
 }
 

@@ -7,7 +7,7 @@ services:
     volumes:
       - type: volume
         source: ledgerdata1
-        target: /tem/databases
+        target: /ledger/databases
     environment:
       APPLICATION_ID: cloud
       IS_CLOUD: "true"
@@ -19,7 +19,7 @@ services:
     volumes:
       - type: volume
         source: ledgerdata2
-        target: /tem/databases
+        target: /ledger/databases
     environment:
       APPLICATION_ID: "edge-0"
       PORT: 8889
@@ -31,7 +31,7 @@ services:
     volumes:
       - type: volume
         source: ledgerdata3
-        target: /tem/databases
+        target: /ledger/databases
     environment:
       APPLICATION_ID: "edge-0"
       PORT: 8890

@@ -7,7 +7,7 @@ services:
     volumes:
       - type: volume
         source: ledgerdata1
-        target: /tem/databases
+        target: /ledger/databases
     environment:
       APPLICATION_ID: cloud
       IS_CLOUD: "true"

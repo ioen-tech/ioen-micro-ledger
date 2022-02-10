@@ -1,4 +1,4 @@
-const ZOME = "tem";
+const ZOME = "ledger";
 const DEBUG = process.env.DEBUG;
 const APPLICATION_ID = process.env.APPLICATION_ID;
 const RELAYER_PORT = process.env.PORT ? process.env.PORT : 8888;
