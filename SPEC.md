@@ -16,11 +16,18 @@ sequenceDiagram
         alt Accept bid
             P->>C: Create contract
             Note over C: Only accept 1 contract
-            P->>C: Provide power
-            P->>C: Create contract receipt
         else Reject bid
             P->>C: Create rejection receipt
         end
+    end
+    loop Every supply cycle
+        Note over P: Supplies power to consumer
+        P->>C: Create invoice for Contract
+        Note over P: Issues credit to consumer
+    end
+    loop Every payment cycle
+        C->>P: Pays invoice
+        P->>C: Create Receipt
     end
 ```
 
@@ -41,7 +48,7 @@ erDiagram
     Producer ||--o{ Contract : creates
     Bid ||--|| Contract : linked
     Producer ||--o{ Receipt : issues
-    Contract ||--|| Receipt : linked
+    Contract }o--|| Receipt : linked
 ```
 
 ### Bidding
