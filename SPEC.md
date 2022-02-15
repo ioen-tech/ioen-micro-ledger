@@ -1,42 +1,50 @@
-# Specification for ioen-ledger 
+# Specification for ioen-micro-ledger
 
 ## Description
-The ioen-ledger is the most basic component in the IOEN architecture; it communicates to the peer-to-peer distributed framework, Holochain.  It is associated
-with one agent.  Functions:
-- reads its agent's ID
-- sends a peer-to-peer message to another agent ID from this agent
-- provides a REST API to write a record.  The record format is undefined, which allows any schema to be accommodated.  The agent ID is required.
-- provides the API to fetch one or more records from one agent.  The records are retrieved based on the agent ID, and allow a timeframe
--- `give me all records on this agent between timestamp m and timestamp n, where m > n`
-- performance tests
-- scripts to spin up virtual machines based on IP address
-- creation of a Docker container
 
-## Technology
-This includes:
-- Holochain core, in Rust.  Some uses may not need Rust expertise
-- Express-relayer, the API, is written in Javascript
+The ioen-ledger is the most basic component in the IOEN architecture. The ledger enables Producers and Consumers of electricity to trade via a bidding system. During each cycle consumers place bids on how much they are willing to pay for power and Producers accept bids for as many Consumers as they have capacity for, provide the power and send receipts to acknowledge the sale of power. A Consumer can also be a Producer, such as a typical household with solar power, but can only be one or the other during a cycle. This is because it is assumed if a Consumer is producing power that is the best value power they can consume. If they are producing more power then they are consuming then they can be a Producer for that cycle.
 
-## Uses
-- None. This is a core component.
 
-## Used by
-- https://github.com/ioen-tech/ioen-discovery
-- https://github.com/ioen-tech/ioen-ledger-report-generator
+```mermaid
+sequenceDiagram
+    actor C as Consumer
+    participant P as Producers
+    loop Every bidding cycle
+        P->>C: Get list of local Producers
+        C->>P: Submit bids to producers
+        P-->>P: Accept & reject bids
+        alt Accept bid
+            P->>C: Create contract
+            Note over C: Only accept 1 contract
+            P->>C: Provide power
+            P->>C: Create contract receipt
+        else Reject bid
+            P->>C: Create rejection receipt
+        end
+    end
+```
 
-## Acceptance criteria
-1. Query an agent, get its agent ID
-2. Send a record to the agent
-3. Fetch a record from the agent
-4. Fetch a record from the agent for a time period
-5. Send a message from one agent to another, confirm the other agent received it
-6. Spin up many agents and run the performance tests
+### Registering
 
-## This version
-0.1 is very primitive (it has been adapted from a commercial project so functionality has been removed).  Future functionality will include:
-- Discovery of other agents
-- A basic set of validation rules
-- An enhanced set of validation rules that represent the microDAO (applied for all agents operating in the DHT)
+When a producer registers to be part of the IOEN their method of producing power and post code are recorded. Consumers can then choose which power sources they are happy to consume from locally available producers.
 
-## Other functionality elsewhere
-- Holochain rules are encapsulated in the DNA.  IOEN will provide a tool to allow these to be specified and shared in another component.
+eg: A solar Producer in post code 3149 would be linked to the Path "Producer.solar.3149" in Holochain.
+
+When a Consumer registers they choose which power sources they wish to consume. Available post codes will be assigned each cycle and Producers in those post codes will be available for bidding.
+
+```mermaid
+erDiagram
+    ProducerPath ||--o{ Producer : register
+    ConsumerPath ||--o{ Consumer : register
+    Consumer ||--o{ Bid : places
+    Bid o{ --||Producer : linked
+    Producer ||--o{ Contract : creates
+    Bid ||--|| Contract : linked
+    Producer ||--o{ Receipt : issues
+    Contract ||--|| Receipt : linked
+```
+
+### Bidding
+
+At the beginning of each cycle a Consumer can submit a bid to each of their local producers. When their bid is accepted they can see which producer supplied their power. Allowing the Consumer to set different bids for each provider such as higher prices for solar than coal will create a market force towards cleaner energy.
+Bids can be accepted by a Producer at any time during the cycle, for this first iteration bids will be manually accepted or rejected via the app. Producers will be able to see the bids from each consumer and click accept or reject on each one.
