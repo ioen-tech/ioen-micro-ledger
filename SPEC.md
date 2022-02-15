@@ -9,7 +9,9 @@ The ioen-ledger is the most basic component in the IOEN architecture. The ledger
 sequenceDiagram
     actor C as Consumer
     participant P as Producers
-    loop Every bidding cycle
+    loop Every payment cycle
+        P->>C: Create Invoice for next payment cycle
+        loop Every bidding cycle
         P->>C: Get list of local Producers
         C->>P: Submit bids to producers
         P-->>P: Accept & reject bids
@@ -19,14 +21,13 @@ sequenceDiagram
         else Reject bid
             P->>C: Create rejection receipt
         end
-    end
-    loop Every supply cycle
-        Note over P: Supplies power to consumer
-        P->>C: Create invoice for Contract
-        Note over P: Issues credit to consumer
-    end
-    loop Every payment cycle
-        C->>P: Pays invoice
+        end
+        loop Every supply cycle
+            Note over P: Supplies power to consumer
+            P->>C: Link Contract to Invoice
+            Note over P: Issues credit to consumer
+        end
+        C->>P: Pays Invoice
         P->>C: Create Receipt
     end
 ```
@@ -47,8 +48,12 @@ erDiagram
     Bid o{ --||Producer : linked
     Producer ||--o{ Contract : creates
     Bid ||--|| Contract : linked
+    Producer ||--o{ Invoice : issues
+    Consumer ||--o{ Invoice : linked
+    Contract }o--|| Invoice : linked
+    Receipt ||--|| Invoice : linked
     Producer ||--o{ Receipt : issues
-    Contract }o--|| Receipt : linked
+    
 ```
 
 ### Bidding
