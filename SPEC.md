@@ -2,43 +2,52 @@
 
 ## Description
 
-The ioen-ledger is the most basic component in the IOEN architecture. The ledger enables Producers and Consumers of electricity to trade via a bidding system. During each cycle consumers place bids on how much they are willing to pay for power and Producers accept bids for as many Consumers as they have capacity for, provide the power and send receipts to acknowledge the sale of power. A Consumer can also be a Producer, such as a typical household with solar power, but can only be one or the other during a cycle. This is because it is assumed if a Consumer is producing power that is the best value power they can consume. If they are producing more power then they are consuming then they can be a Producer for that cycle.
+The ioen-micro-ledger enables Producers and Consumers of electricity to trade IOENs via a distributed bidding system. During each cycle consumers place bids on how much they are willing to pay for power and Producers accept bids and create contracts for as many Consumers as they have capacity for. Producers then provide the power in a separate cycle from the bid and link the contract to an invoice to acknowledge the sale of power.
 
+A Consumer can also be a Producer, such as a typical household with solar power and a battery, but can only be one or the other during a cycle. This is because it is assumed if a Consumer is producing power that is the best value power they can consume. If they are producing more power then they are consuming then they can be a Producer for that cycle.
 
 ```mermaid
 sequenceDiagram
+    participant H as Holochain
     actor C as Consumer
-    participant P as Producers
-    loop Every payment cycle
-        P->>C: Create Invoice for next payment cycle
-        loop Every bidding cycle
-        P->>C: Get list of local Producers
-        C->>P: Submit bids to producers
-        P-->>P: Accept & reject bids
-        alt Accept bid
-            P->>C: Create contract
-            Note over C: Only accept 1 contract
-        else Reject bid
-            P->>C: Create rejection receipt
+    participant P1 as Producer1
+    participant P2 as Producer2
+    loop Producer payment cycle
+        loop Bidding cycle (can be 1 cycle)
+            H->>C: Get list of local Producers
+            C->>P1: Submit bid to producer 1
+            C->>P2: Submit bid to producer 2
+            P1-->>P1: Accept & reject bids
+            P2-->>P2: Accept & reject bids
+            alt P1 accepts bid
+                P1->>C: Accept bid
+                Note over C: Only accept 1 contract
+                P1->>C: Create Invoice on first Bid
+            else Reject bid
+                P2->>C: Create rejection receipt
+            end
         end
+        loop Supply cycle
+            Note over P1: Supplies power to consumer
+            P1->>C: Link Bid to Invoice
+            Note over P1: Issues credit to consumer
         end
-        loop Every supply cycle
-            Note over P: Supplies power to consumer
-            P->>C: Link Contract to Invoice
-            Note over P: Issues credit to consumer
-        end
-        C->>P: Pays Invoice
-        P->>C: Create Receipt
+        C->>P1: Pays Invoice
+        P1->>C: Create Receipt
     end
 ```
 
 ### Registering
 
-When a producer registers to be part of the IOEN their method of producing power and post code are recorded. Consumers can then choose which power sources they are happy to consume from locally available producers.
+When a producer registers to be part of the Internet Of ENergy their method of producing power and post code are recorded in their Profile along with their name & address. Consumers can then choose which power sources they are happy to consume from locally available producers.
 
 eg: A solar Producer in post code 3149 would be linked to the Path "Producer.solar.3149" in Holochain.
 
-When a Consumer registers they choose which power sources they wish to consume. Available post codes will be assigned each cycle and Producers in those post codes will be available for bidding.
+When a Consumer registers, the generation methods they wish to consume are stored in their Profile along with their name & address.
+
+eg: A Consumer Profile in post code 3149 would be linked to the Path "Consumer.3149" in Holochain.
+
+Available post codes will be assigned each cycle and Producers in those post codes will be available for bidding.
 
 ```mermaid
 erDiagram
@@ -46,17 +55,21 @@ erDiagram
     ConsumerPath ||--o{ Consumer : register
     Consumer ||--o{ Bid : places
     Bid o{ --||Producer : linked
-    Producer ||--o{ Contract : creates
-    Bid ||--|| Contract : linked
-    Producer ||--o{ Invoice : issues
-    Consumer ||--o{ Invoice : linked
-    Contract }o--|| Invoice : linked
-    Receipt ||--|| Invoice : linked
-    Producer ||--o{ Receipt : issues
-    
+    Producer ||--o{ Bill : issues
+    Consumer ||--o{ Bill : issued
+    Bid }o--|| Bill : power-supplied
+    Consumer ||--|| Producer : pays
+    Bill ||--|| Currency : paid-with
 ```
 
 ### Bidding
 
 At the beginning of each cycle a Consumer can submit a bid to each of their local producers. When their bid is accepted they can see which producer supplied their power. Allowing the Consumer to set different bids for each provider such as higher prices for solar than coal will create a market force towards cleaner energy.
 Bids can be accepted by a Producer at any time during the cycle, for this first iteration bids will be manually accepted or rejected via the app. Producers will be able to see the bids from each consumer and click accept or reject on each one.
+
+### Billing -> HoloFuel clone
+
+A Consumer who buys power from one or more Producers during a billing cycle will be issued an Bill by each Producer.
+
+IOENs are the mutual credit currency used to pay for energy generated by a distributed network of energy producers who provide electrical power.
+![IOENs diagram](./IOENs.png)
