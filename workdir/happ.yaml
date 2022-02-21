@@ -1,0 +1,17 @@
+---
+manifest_version: "1"
+name: ioen-micro-ledger
+description: ~
+roles:
+
+  - id: ioen_micro_ledger
+    provisioning:
+      strategy: create
+      deferred: false
+    dna:
+      bundled: "../dna/workdir/ioen_micro_ledger.dna"
+      properties: ~
+      uuid: ~
+      version: ~
+      clone_limit: 0
+

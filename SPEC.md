@@ -49,17 +49,21 @@ eg: A Consumer Profile in post code 3149 would be linked to the Path "Consumer.3
 
 Available post codes will be assigned each cycle and Producers in those post codes will be available for bidding.
 
+If you have already registered as either a Consumer or Producer and register again the form will be auto filled with the previous entries.
+
 ```mermaid
 erDiagram
     ProducerPath ||--o{ Producer : register
     ConsumerPath ||--o{ Consumer : register
-    Consumer ||--o{ Bid : places
-    Bid o{ --||Producer : linked
+    Consumer ||--o{ SupplyAgreement : negotiates
+    SupplyAgreement o{ --||Producer : negotiates
     Producer ||--o{ Bill : issues
     Consumer ||--o{ Bill : issued
-    Bid }o--|| Bill : power-supplied
-    Consumer ||--|| Producer : pays
-    Bill ||--|| Currency : paid-with
+    SupplyAgreement ||--o{ SupplyBlock : execute-agreement
+    Producer ||--o{ SupplyBlock : power-supplied
+    Consumer ||--o{ SupplyBlock : power-received
+    SupplyBlock }o--|| Bill : supply-recorded
+    Bill ||--|| HoloFuel-Clone : paid-with
 ```
 
 ### Bidding
