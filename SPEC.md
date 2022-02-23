@@ -2,40 +2,53 @@
 
 ## Description
 
-The ioen-micro-ledger enables Producers and Consumers of electricity to trade IOENs via a distributed bidding system. During each cycle consumers place bids on how much they are willing to pay for power and Producers accept bids and create contracts for as many Consumers as they have capacity for. Producers then provide the power in a separate cycle from the bid and link the contract to an invoice to acknowledge the sale of power.
+The ioen-micro-ledger enables Producers and Consumers of electricity to trade IOENs via a distributed Supply Agreement System where each micro grid can have its own set of agreements. Producers and Consumers of power can then negotiate a Supply Agreement that is tailored for them and referenced for billing as power is supplied.
 
-A Consumer can also be a Producer, such as a typical household with solar power and a battery, but can only be one or the other during a cycle. This is because it is assumed if a Consumer is producing power that is the best value power they can consume. If they are producing more power then they are consuming then they can be a Producer for that cycle.
+Scenario 1: A Consumer has agreements with 3 homes on their street and the battery for the street over. The Consumer needs 4 kWh and is supplied 1 kWh from each.
+
+Scenario 2: When a Consumer needs 1 kWh it will come from first available preference.
+
+The power distribution bus manages the power connections. The ioen-micro-ledger is logging that power was supplied not deciding who should be the producer.
+
+A Consumer can also be a Producer, such as a typical household with solar power and a battery, but can only be one or the other during a Supply Block. This is because it is assumed if a Consumer is producing power that is the best value power they can consume. If they are producing more power then they are consuming then they can be a Producer for that Supply Block.
+
+### Sequence of events
 
 ```mermaid
 sequenceDiagram
-    participant H as Holochain
+    participant H as ioen-micro-ledger
     actor C as Consumer
     participant P1 as Producer1
     participant P2 as Producer2
-    loop Producer payment cycle
-        loop Bidding cycle (can be 1 cycle)
-            H->>C: Get list of local Producers
-            C->>P1: Submit bid to producer 1
-            C->>P2: Submit bid to producer 2
-            P1-->>P1: Accept & reject bids
-            P2-->>P2: Accept & reject bids
-            alt P1 accepts bid
-                P1->>C: Accept bid
-                Note over C: Only accept 1 contract
-                P1->>C: Create Invoice on first Bid
-            else Reject bid
-                P2->>C: Create rejection receipt
-            end
+    loop Negotiate Supply Agreements
+        H->>C: List Producers
+        C->>C: Analyse Supply Agreements
+        C->>P1: Sign Supply Agreement
+        C->>P2: Sign Supply Agreement
+    end 
+
+    Note over H: HoloFuel clone manages payment
+    loop Producer Invoice Cycle
+        P1-->>H: Create Invoice
+        P2-->>H: Create Invoice
+        loop Power Supply Cycle
+            P1-->>H: Issue credit to consumer 
+            Note over P1: Supply power to consumer
+            P1->>P1: Create Supply Block
+            C->>P1: Confirm Supply Block
+            P2-->>H: Issue credit to consumer 
+            Note over P2: Supply power to consumer
+            P2->>P2: Create Supply Block
         end
-        loop Supply cycle
-            Note over P1: Supplies power to consumer
-            P1->>C: Link Bid to Invoice
-            Note over P1: Issues credit to consumer
-        end
-        C->>P1: Pays Invoice
-        P1->>C: Create Receipt
+        P1-->>H: Issue Invoice
+        P2-->>H: Issue Invoice
+        H-->>P1: Pays Invoice
+        H-->>P2: Pays Invoice
     end
 ```
+
+> MVP of ioen-micro-ledger will implement the solid lines in the sequence diagram
+> Quality of service metrics added to Supply Block used for reputation
 
 ### Registering
 
