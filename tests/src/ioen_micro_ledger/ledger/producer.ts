@@ -23,7 +23,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
     const entryContents = {"address":"123 Ioen St","postcode":3149,"method":"solar"};
     const entry2Contents = {"address":"1 Redgrid St","postcode":3149,"method":"solar"};
 
-    // Alice creates a producer
+    // Alice creates 2 producers
     let create_output = await alice.call(
         "ledger",
         "create_producer",
@@ -38,11 +38,11 @@ export default (orchestrator: Orchestrator<any>) =>  {
     );
     await sleep(50);
     
-    // Bob gets the created producer
+    // Bob gets the first created producer
     let entry = await bob.call("ledger", "get_producer", create_output.entry_hash);
     t.deepEqual(entry, entryContents);
     
-    // Alice updates the producer
+     // Alice lists the producers in solar 3149
     let list_output = await alice.call(
       "ledger",
       "list_producers",
@@ -51,7 +51,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
         "postcode": 3149,
       }
     );
-    console.log(list_output)
+    t.ok(list_output.length === 2)
     await sleep(50);
 
     // Alice updates the producer
