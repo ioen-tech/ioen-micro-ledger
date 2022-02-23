@@ -18,7 +18,39 @@ pub fn get_producer(entry_hash: EntryHashB64) -> ExternResult<Option<Producer>> 
   }
 }
 
+#[derive(Serialize, Deserialize, Debug)]
+pub struct ProducerFilter {
+  postcode: i64,
+  method: String,
+}
 
+// #[hdk_extern]
+// pub fn get_all_producers(_: ()) -> ExternResult<Vec<String>> {
+//     let path = Path::from("Producers");
+
+//     let links = path.children()?;
+
+//     let producers = links
+//         .into_iter()
+//         .map(|child_link| format!("{}", child_link.tag))
+//         .collect::<ExternResult<Vec<String>>>()?;
+
+//     Ok(producers)
+// }
+
+#[hdk_extern]
+pub fn list_producers(producer_filter: ProducerFilter) -> ExternResult<Vec<Producer>> {
+  let path = Path::from(format!("Producers.{}.{}", producer_filter.method, producer_filter.postcode));
+
+  let links = get_links(path.path_entry_hash()?, None)?;
+
+  let producers: Vec<Producer> = links
+      .into_iter()
+      .filter_map(|link| get_producer(EntryHashB64::from(link.target) ).transpose())
+      .collect::<ExternResult<Vec<Producer>>>()?;
+
+  Ok(producers)
+}
 #[derive(Serialize, Deserialize, Debug)]
 pub struct NewProducerOutput {
   header_hash: HeaderHashB64,
@@ -27,9 +59,15 @@ pub struct NewProducerOutput {
 
 #[hdk_extern]
 pub fn create_producer(producer: Producer) -> ExternResult<NewProducerOutput> {
+  let producer_path = format!("Producers.{}.{}", producer.method, producer.postcode);
+  let path = Path::from(producer_path);
+  path.ensure()?;
+
   let header_hash = create_entry(&producer)?;
 
   let entry_hash = hash_entry(&producer)?;
+
+  create_link(path.path_entry_hash()?, entry_hash.clone(), ())?;
 
   let output = NewProducerOutput {
     header_hash: HeaderHashB64::from(header_hash),

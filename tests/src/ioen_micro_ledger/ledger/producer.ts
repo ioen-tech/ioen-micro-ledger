@@ -21,6 +21,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
     const bob = bob_happ.cells.find(cell => cell.cellRole.includes('/ioen_micro_ledger.dna')) as Cell;
 
     const entryContents = {"address":"123 Ioen St","postcode":3149,"method":"solar"};
+    const entry2Contents = {"address":"1 Redgrid St","postcode":3149,"method":"solar"};
 
     // Alice creates a producer
     let create_output = await alice.call(
@@ -30,14 +31,29 @@ export default (orchestrator: Orchestrator<any>) =>  {
     );
     t.ok(create_output.header_hash);
     t.ok(create_output.entry_hash);
-
+    await alice.call(
+      "ledger",
+      "create_producer",
+      entry2Contents
+    );
     await sleep(50);
     
     // Bob gets the created producer
     let entry = await bob.call("ledger", "get_producer", create_output.entry_hash);
     t.deepEqual(entry, entryContents);
     
-    
+    // Alice updates the producer
+    let list_output = await alice.call(
+      "ledger",
+      "list_producers",
+      {
+        "method": "solar",
+        "postcode": 3149,
+      }
+    );
+    console.log(list_output)
+    await sleep(50);
+
     // Alice updates the producer
     let update_output = await alice.call(
       "ledger",
@@ -46,11 +62,10 @@ export default (orchestrator: Orchestrator<any>) =>  {
         original_header_hash: create_output.header_hash,
         updated_producer: {
           "method": "incididunt laborum tempor",
-  "postcode": -11958844,
-  "address": "aliqua ad qui in anim"
-}
+          "postcode": -11958844,
+          "address": "aliqua ad qui in anim"
       }
-    );
+    });
     t.ok(update_output.header_hash);
     t.ok(update_output.entry_hash);
     await sleep(50);

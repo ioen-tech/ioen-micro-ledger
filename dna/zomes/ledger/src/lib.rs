@@ -13,6 +13,7 @@ use supply_block::SupplyBlock;
 use bill::Bill;
 
 entry_defs![
+  PathEntry::entry_def(),
   Consumer::entry_def(),
   Producer::entry_def(),
   SupplyAgreement::entry_def(),
