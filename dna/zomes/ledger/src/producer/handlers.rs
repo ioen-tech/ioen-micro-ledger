@@ -20,7 +20,7 @@ pub fn get_producer(entry_hash: EntryHashB64) -> ExternResult<Option<Producer>> 
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ProducerFilter {
-  postcode: i64,
+  postcode: String,
   method: String,
 }
 

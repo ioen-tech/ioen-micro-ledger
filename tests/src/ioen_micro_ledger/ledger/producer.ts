@@ -38,6 +38,10 @@ export default (orchestrator: Orchestrator<any>) =>  {
     );
     await sleep(50);
     
+    let agent_address = await bob.call("ledger", "who_am_i");
+    console.log("agent_address")
+    console.log(agent_address)
+
     // Bob gets the first created producer
     let entry = await bob.call("ledger", "get_producer", create_output.entry_hash);
     t.deepEqual(entry, entryContents);
@@ -52,7 +56,6 @@ export default (orchestrator: Orchestrator<any>) =>  {
       }
     );
     t.ok(list_output.length === 2)
-    await sleep(50);
 
     // Alice updates the producer
     let update_output = await alice.call(

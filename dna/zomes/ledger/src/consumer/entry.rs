@@ -5,5 +5,5 @@ use hdk::prelude::*;
 #[serde(rename_all = "camelCase")]
 pub struct Consumer {
     pub address: String,
-    pub postcode: i64,
+    pub postcode: String,
 }
