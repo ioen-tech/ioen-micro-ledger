@@ -21,3 +21,9 @@ entry_defs![
   Bill::entry_def()
 ];
 
+#[hdk_extern]
+fn who_am_i(_: ()) -> ExternResult<AgentPubKey> {
+    let agent_info = agent_info()?;
+
+    Ok(AgentPubKey::from(agent_info.agent_initial_pubkey))
+}

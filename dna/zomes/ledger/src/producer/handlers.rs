@@ -20,23 +20,9 @@ pub fn get_producer(entry_hash: EntryHashB64) -> ExternResult<Option<Producer>> 
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ProducerFilter {
-  postcode: i64,
+  postcode: String,
   method: String,
 }
-
-// #[hdk_extern]
-// pub fn get_all_producers(_: ()) -> ExternResult<Vec<String>> {
-//     let path = Path::from("Producers");
-
-//     let links = path.children()?;
-
-//     let producers = links
-//         .into_iter()
-//         .map(|child_link| format!("{}", child_link.tag))
-//         .collect::<ExternResult<Vec<String>>>()?;
-
-//     Ok(producers)
-// }
 
 #[hdk_extern]
 pub fn list_producers(producer_filter: ProducerFilter) -> ExternResult<Vec<Producer>> {
