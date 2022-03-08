@@ -1,12 +1,12 @@
 const routes = [
   {
-    path: '/producer',
+    path: '/supplier',
     component: () => import('@/layouts/basic/Index.vue'),
     children: [
       {
         path: '',
         name: 'Producer',
-        component: () => import('@/views/producer/Index.vue')
+        component: () => import('@/views/supplier/Index.vue')
       }
     ]
   }

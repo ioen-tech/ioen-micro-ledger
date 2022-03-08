@@ -19,25 +19,25 @@ export function connect (port) {
     })
 }
 
-export function createProducer (producer, callback) {
+export function createProducer (supplier, callback) {
   hcClient.callZome({
     cap: null,
     cell_id: cellId,
     zome_name: 'ledger',
-    fn_name: 'create_producer',
+    fn_name: 'create_supplier',
     provenance: cellId[1],
-    payload: producer
+    payload: supplier
   }).then(committedProducer => callback(committedProducer))
 }
 
-export function deleteProducer (producer) {
+export function deleteProducer (supplier) {
   hcClient.callZome({
     cap: null,
     cell_id: cellId,
     zome_name: 'ledger',
-    fn_name: 'delete_producer',
+    fn_name: 'delete_supplier',
     provenance: cellId[1],
-    payload: producer
+    payload: supplier
   }).then(result => console.log(result))
 }
 
@@ -46,7 +46,7 @@ export function listProducers (filter, callback) {
     cap: null,
     cell_id: cellId,
     zome_name: 'ledger',
-    fn_name: 'list_producers',
+    fn_name: 'list_suppliers',
     provenance: cellId[1],
     payload: filter
   }).then(result => callback(result))

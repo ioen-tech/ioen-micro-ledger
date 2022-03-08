@@ -4,7 +4,7 @@ import { config, installation, sleep } from '../../utils';
 
 export default (orchestrator: Orchestrator<any>) =>  {
   
-  orchestrator.registerScenario("producer CRUD tests", async (s, t) => {
+  orchestrator.registerScenario("supplier CRUD tests", async (s, t) => {
     // Declare two players using the previously specified config, nicknaming them "alice" and "bob"
     // note that the first argument to players is just an array conductor configs that that will
     // be used to spin up the conductor processes which are returned in a matching array.
@@ -23,17 +23,17 @@ export default (orchestrator: Orchestrator<any>) =>  {
     const entryContents = {"address":"123 Ioen St","postcode":"3149","method":"solar"};
     const entry2Contents = {"address":"1 Redgrid St","postcode":"3149","method":"solar"};
 
-    // Alice creates 2 producers
+    // Alice creates 2 suppliers
     let create_output = await alice.call(
         "ledger",
-        "create_producer",
+        "create_supplier",
         entryContents
     );
     t.ok(create_output.header_hash);
     t.ok(create_output.entry_hash);
     await alice.call(
       "ledger",
-      "create_producer",
+      "create_supplier",
       entry2Contents
     );
     await sleep(50);
@@ -42,14 +42,14 @@ export default (orchestrator: Orchestrator<any>) =>  {
     console.log("agent_address")
     console.log(agent_address)
 
-    // Bob gets the first created producer
-    let entry = await bob.call("ledger", "get_producer", create_output.entry_hash);
+    // Bob gets the first created supplier
+    let entry = await bob.call("ledger", "get_supplier", create_output.entry_hash);
     t.deepEqual(entry, entryContents);
     
-     // Alice lists the producers in solar 3149
+     // Alice lists the suppliers in solar 3149
     let list_output = await alice.call(
       "ledger",
-      "list_producers",
+      "list_suppliers",
       {
         "method": "solar",
         "postcode": "3149",
@@ -57,13 +57,13 @@ export default (orchestrator: Orchestrator<any>) =>  {
     );
     t.ok(list_output.length === 2)
 
-    // Alice updates the producer
+    // Alice updates the supplier
     let update_output = await alice.call(
       "ledger",
-      "update_producer",
+      "update_supplier",
       {
         original_header_hash: create_output.header_hash,
-        updated_producer: {
+        updated_supplier: {
           "method": "incididunt laborum tempor",
           "postcode": "444",
           "address": "aliqua ad qui in anim"
@@ -75,17 +75,17 @@ export default (orchestrator: Orchestrator<any>) =>  {
 
       
     
-    // Alice delete the producer
+    // Alice delete the supplier
     await alice.call(
       "ledger",
-      "delete_producer",
+      "delete_supplier",
       create_output.header_hash
     );
     await sleep(50);
 
     
-    // Bob tries to get the deleted producer, but he doesn't get it because it has been deleted
-    let deletedEntry = await bob.call("ledger", "get_producer", create_output.entry_hash);
+    // Bob tries to get the deleted supplier, but he doesn't get it because it has been deleted
+    let deletedEntry = await bob.call("ledger", "get_supplier", create_output.entry_hash);
     t.notOk(deletedEntry);
       
   });

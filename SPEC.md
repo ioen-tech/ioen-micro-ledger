@@ -2,15 +2,15 @@
 
 ## Description
 
-The ioen-micro-ledger enables Producers and Consumers of electricity to trade IOENs via a distributed Supply Agreement System where each micro grid can have its own set of agreements. Producers and Consumers of power can then negotiate a Supply Agreement that is tailored for them and referenced for billing as power is supplied.
+The ioen-micro-ledger enables Suppliers and Consumers of electricity to trade IOENs via a distributed Supply Agreement System where each micro grid can have its own set of agreements. Suppliers and Consumers of power can then negotiate a Supply Agreement that is tailored for them and referenced for billing as power is supplied.
 
 Scenario 1: A Consumer has agreements with 3 homes on their street and the battery for the street over. The Consumer needs 4 kWh and is supplied 1 kWh from each.
 
 Scenario 2: When a Consumer needs 1 kWh it will come from first available preference.
 
-The power distribution bus manages the power connections. The ioen-micro-ledger is logging that power was supplied not deciding who should be the producer.
+The power distribution bus manages the power connections. The ioen-micro-ledger is logging that power was supplied not deciding who should be the supplier.
 
-A Consumer can also be a Producer, such as a typical household with solar power and a battery, but can only be one or the other during a Supply Block. This is because it is assumed if a Consumer is producing power that is the best value power they can consume. If they are producing more power then they are consuming then they can be a Producer for that Supply Block.
+A Consumer can also be a Supplier, such as a typical household with solar power and a battery, but can only be one or the other during a Supply Block. This is because it is assumed if a Consumer is producing power that is the best value power they can consume. If they are producing more power then they are consuming then they can be a Supplier for that Supply Block.
 
 ### Sequence of events
 
@@ -18,17 +18,17 @@ A Consumer can also be a Producer, such as a typical household with solar power 
 sequenceDiagram
     participant H as ioen-micro-ledger
     actor C as Consumer
-    participant P1 as Producer1
-    participant P2 as Producer2
+    participant P1 as Supplier1
+    participant P2 as Supplier2
     loop Negotiate Supply Agreements
-        H->>C: List Producers
+        H->>C: List Suppliers
         C->>C: Analyse Supply Agreements
         C->>P1: Sign Supply Agreement
         C->>P2: Sign Supply Agreement
     end 
 
     Note over H: HoloFuel clone manages payment
-    loop Producer Bill Cycle
+    loop Supplier Bill Cycle
         P1-->>H: Create Bill
         P2-->>H: Create Bill
         loop Power Supply Cycle
@@ -52,28 +52,28 @@ sequenceDiagram
 
 ### Registering
 
-When a producer registers to be part of the Internet Of ENergy their method of producing power and post code are recorded in their Profile along with their name & address. Consumers can then choose which power sources they are happy to consume from locally available producers.
+When a supplier registers to be part of the Internet Of ENergy their method of producing power and post code are recorded in their Profile along with their name & address. Consumers can then choose which power sources they are happy to consume from locally available suppliers.
 
-eg: A solar Producer in post code 3149 would be linked to the Path "Producer.solar.3149" in Holochain.
+eg: A solar Supplier in post code 3149 would be linked to the Path "Supplier.solar.3149" in Holochain.
 
 When a Consumer registers, the generation methods they wish to consume are stored in their Profile along with their name & address.
 
 eg: A Consumer Profile in post code 3149 would be linked to the Path "Consumer.3149" in Holochain.
 
-Available post codes will be assigned each cycle and Producers in those post codes will be available for bidding.
+Available post codes will be assigned each cycle and Suppliers in those post codes will be available for bidding.
 
-If you have already registered as either a Consumer or Producer and register again the form will be auto filled with the previous entries.
+If you have already registered as either a Consumer or Supplier and register again the form will be auto filled with the previous entries.
 
 ```mermaid
 erDiagram
-    ProducerPath ||--o{ Producer : register
+    SupplierPath ||--o{ Supplier : register
     ConsumerPath ||--o{ Consumer : register
     Consumer ||--o{ SupplyAgreement : negotiates
-    SupplyAgreement o{ --||Producer : negotiates
-    Producer ||--o{ Bill : issues
+    SupplyAgreement o{ --||Supplier : negotiates
+    Supplier ||--o{ Bill : issues
     Consumer ||--o{ Bill : issued
     SupplyAgreement ||--o{ SupplyBlock : execute-agreement
-    Producer ||--o{ SupplyBlock : power-supplied
+    Supplier ||--o{ SupplyBlock : power-supplied
     Consumer ||--o{ SupplyBlock : power-received
     SupplyBlock }o--|| Bill : supply-recorded
     Bill ||--|| HoloFuel-Clone : paid-with
@@ -81,7 +81,7 @@ erDiagram
 
 ### Billing -> HoloFuel clone
 
-A Consumer who buys power from one or more Producers during a billing cycle will be issued a Bill by each Producer.
+A Consumer who buys power from one or more Suppliers during a billing cycle will be issued a Bill by each Supplier.
 
-IOEN Fuel is the mutual credit currency used to pay for energy generated by a distributed network of energy producers who provide electrical power.
+IOEN Fuel is the mutual credit currency used to pay for energy generated by a distributed network of energy suppliers who provide electrical power.
 ![IOENs diagram](./IOENs.png)
