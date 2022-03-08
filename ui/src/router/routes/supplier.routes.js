@@ -5,7 +5,7 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'Producer',
+        name: 'Supplier',
         component: () => import('@/views/supplier/Index.vue')
       }
     ]

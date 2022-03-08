@@ -20,13 +20,26 @@ export default (orchestrator: Orchestrator<any>) =>  {
     const alice = alice_happ.cells.find(cell => cell.cellRole.includes('/ioen_micro_ledger.dna')) as Cell;
     const bob = bob_happ.cells.find(cell => cell.cellRole.includes('/ioen_micro_ledger.dna')) as Cell;
 
-    const entryContents = {"from":1645151305198,"to":1645151305198,"price":0.1};
+    const supplierEntryContents = {"address":"123 Ioen St","postcode":"3149","method":"solar"};
 
+    // Alice creates 2 suppliers
+    let supplierEntryHash = await alice.call(
+        "ledger",
+        "create_supplier",
+        supplierEntryContents
+    );
+
+    const entryContents = {"from":1645151305198,"to":1645151305198,"rate":0.1};
+
+    let new_supply_agreement = {
+      supplier_entry_hash: supplierEntryHash.entry_hash,
+      supply_agreement: entryContents
+    }
     // Alice creates a supply_agreement
     let create_output = await alice.call(
         "ledger",
         "create_supply_agreement",
-        entryContents
+        new_supply_agreement
     );
     t.ok(create_output.header_hash);
     t.ok(create_output.entry_hash);
@@ -37,8 +50,13 @@ export default (orchestrator: Orchestrator<any>) =>  {
     let entry = await bob.call("ledger", "get_supply_agreement", create_output.entry_hash);
     t.deepEqual(entry, entryContents);
     
-    
-    
+    let existing_supply_agreement = {
+      supplier_entry_hash: supplierEntryHash.entry_hash,
+      supply_agreement_entry_hash: create_output.entry_hash
+    }
+
+    let link_to_exisiting_output = await alice.call("ledger", "existing_supply_agreement", existing_supply_agreement);
+    t.ok(link_to_exisiting_output);
   });
 
 }

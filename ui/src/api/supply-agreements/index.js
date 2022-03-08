@@ -19,34 +19,34 @@ export function connect (port) {
     })
 }
 
-export function createSupplier (supplier, callback) {
+export function createSupplyAgreement (supplyAgreement, callback) {
   hcClient.callZome({
     cap: null,
     cell_id: cellId,
     zome_name: 'ledger',
-    fn_name: 'create_supplier',
+    fn_name: 'create_supply_agreement',
     provenance: cellId[1],
-    payload: supplier
-  }).then(committedSupplier => callback(committedSupplier))
+    payload: supplyAgreement
+  }).then(committedSupplyAgreement => callback(committedSupplyAgreement))
 }
 
-export function deleteSupplier (supplier) {
+export function deleteSupplyAgreement (supplyAgreement) {
   hcClient.callZome({
     cap: null,
     cell_id: cellId,
     zome_name: 'ledger',
-    fn_name: 'delete_supplier',
+    fn_name: 'delete_supply_agreement',
     provenance: cellId[1],
-    payload: supplier
+    payload: supplyAgreement
   }).then(result => console.log(result))
 }
 
-export function listSuppliers (filter, callback) {
+export function listSupplyAgreements (filter, callback) {
   hcClient.callZome({
     cap: null,
     cell_id: cellId,
     zome_name: 'ledger',
-    fn_name: 'list_suppliers',
+    fn_name: 'list_supply_agreements',
     provenance: cellId[1],
     payload: filter
   }).then(result => callback(result))

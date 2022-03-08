@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import * as ProducersApi from '@/api/suppliers'
+import * as SuppliersApi from '@/api/suppliers'
 
 Vue.use(Vuex)
 
@@ -10,36 +10,36 @@ export default {
     suppliers: []
   },
   actions: {
-    async initialise ({ dispatch }) {
-      ProducersApi.connect('5000')
+    async initialise () {
+      SuppliersApi.connect('5000')
     },
-    createProducer ({ commit }, payload) {
+    createSupplier ({ commit }, payload) {
       const supplier = payload
-      commit('createProducer', supplier)
-      ProducersApi.createProducer(supplier, (committedProducer) => {
-        console.log(committedProducer)
-        commit('updateProducer', committedProducer)
+      commit('createSupplier', supplier)
+      SuppliersApi.createSupplier(supplier, (committedSupplier) => {
+        console.log(committedSupplier)
+        commit('updateSupplier', committedSupplier)
       })
     },
-    listProducers ({ state, commit }) {
-      ProducersApi.listProducers(result => {
-        commit('setProducers', result.suppliers)
+    listSuppliers ({ commit }) {
+      SuppliersApi.listSuppliers(result => {
+        commit('setSuppliers', result.suppliers)
       })
     }
   },
   mutations: {
-    setProducers (state, payload) {
+    setSuppliers (state, payload) {
       state.suppliers = payload
     },
-    createProducer (state, payload) {
+    createSupplier (state, payload) {
       state.suppliers.splice(0, 0, payload)
     },
-    updateProducer (state, payload) {
+    updateSupplier (state, payload) {
       state.suppliers = state.suppliers.map(supplier =>
         supplier.uuid !== payload.uuid ? supplier : { ...supplier, ...payload }
       )
     },
-    deleteProducer (state, payload) {
+    deleteSupplier (state, payload) {
       state.suppliers = state.suppliers.filter(c => c.uuid !== payload.uuid)
     }
   },

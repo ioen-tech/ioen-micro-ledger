@@ -6,5 +6,5 @@ use hdk::prelude::*;
 pub struct SupplyAgreement {
     pub from: i64,
     pub to: i64,
-    pub price: f64,
+    pub rate: f64,
 }

@@ -1,7 +1,7 @@
 <template>
-  <section id="supplier">
+  <section id="supply-agreements">
     <v-row no-gutters class="pa-2">
-      <h1>Supplier</h1>
+      <h1>New Supply Agreement</h1>
       <v-form v-model="valid">
         <v-container>
           <v-row>
@@ -10,8 +10,8 @@
               md="4"
             >
               <v-text-field
-                v-model="supplier.address"
-                label="Address"
+                v-model="supplier.from"
+                label="From"
                 required
               ></v-text-field>
             </v-col>
@@ -20,9 +20,8 @@
               md="4"
             >
               <v-text-field
-                v-model="supplier.postcode"
-                :counter="4"
-                label="Post Code"
+                v-model="supplier.to"
+                label="To"
                 required
               ></v-text-field>
             </v-col>
@@ -30,17 +29,17 @@
               cols="12"
               md="4"
             >
-              <v-select
-                v-model="supplier.method"
-                :items="methods"
-                label="Generation Method"
-              ></v-select>
+              <v-text-field
+                v-model="supplier.rate"
+                label="Rate"
+                required
+              ></v-text-field>
             </v-col>
           </v-row>
         </v-container>
         <v-spacer></v-spacer>
         <v-btn
-          @click="createSupplier(supplier)"
+          @click="createS(agreement)"
           class="mr-2"
         >
           submit
@@ -57,21 +56,20 @@
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'Supplier',
+  name: 'SupplyAgreements',
 
   components: {
   },
   data: () => ({
     valid: false,
-    methods: ['solar', 'wind', 'hydro', 'geo'],
-    supplier: {
-      method: '',
-      address: '',
-      postcode: ''
+    agreement: {
+      from: '',
+      to: '',
+      rate: ''
     }
   }),
   methods: {
-    ...mapActions('suppliers', ['createSupplier'])
+    ...mapActions('suppliers', ['createS'])
   },
   created () {
     this.$store.dispatch('suppliers/initialise')
