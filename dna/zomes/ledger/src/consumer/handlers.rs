@@ -27,9 +27,15 @@ pub struct NewConsumerOutput {
 
 #[hdk_extern]
 pub fn create_consumer(consumer: Consumer) -> ExternResult<NewConsumerOutput> {
+  let consumer_path = format!("Consumer.{}", consumer.postcode);
+  let path = Path::from(consumer_path);
+  path.ensure()?;
+
   let header_hash = create_entry(&consumer)?;
 
   let entry_hash = hash_entry(&consumer)?;
+
+  create_link(path.path_entry_hash()?, entry_hash.clone(), ())?;
 
   let output = NewConsumerOutput {
     header_hash: HeaderHashB64::from(header_hash),

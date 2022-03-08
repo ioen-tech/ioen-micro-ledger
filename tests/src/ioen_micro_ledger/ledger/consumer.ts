@@ -20,7 +20,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
     const alice = alice_happ.cells.find(cell => cell.cellRole.includes('/ioen_micro_ledger.dna')) as Cell;
     const bob = bob_happ.cells.find(cell => cell.cellRole.includes('/ioen_micro_ledger.dna')) as Cell;
 
-    const entryContents = {"address":"123 Ioen St","postcode":3149};
+    const entryContents = {"address":"123 Ioen St","postcode":"3149"};
 
     // Alice creates a consumer
     let create_output = await alice.call(
@@ -45,7 +45,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
       {
         original_header_hash: create_output.header_hash,
         updated_consumer: {
-          "postcode": -35272134,
+          "postcode": "444",
   "address": "eu"
 }
       }

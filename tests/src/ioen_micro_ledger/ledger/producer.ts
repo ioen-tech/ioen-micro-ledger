@@ -20,8 +20,8 @@ export default (orchestrator: Orchestrator<any>) =>  {
     const alice = alice_happ.cells.find(cell => cell.cellRole.includes('/ioen_micro_ledger.dna')) as Cell;
     const bob = bob_happ.cells.find(cell => cell.cellRole.includes('/ioen_micro_ledger.dna')) as Cell;
 
-    const entryContents = {"address":"123 Ioen St","postcode":3149,"method":"solar"};
-    const entry2Contents = {"address":"1 Redgrid St","postcode":3149,"method":"solar"};
+    const entryContents = {"address":"123 Ioen St","postcode":"3149","method":"solar"};
+    const entry2Contents = {"address":"1 Redgrid St","postcode":"3149","method":"solar"};
 
     // Alice creates 2 producers
     let create_output = await alice.call(
@@ -52,7 +52,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
       "list_producers",
       {
         "method": "solar",
-        "postcode": 3149,
+        "postcode": "3149",
       }
     );
     t.ok(list_output.length === 2)
@@ -65,7 +65,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
         original_header_hash: create_output.header_hash,
         updated_producer: {
           "method": "incididunt laborum tempor",
-          "postcode": -11958844,
+          "postcode": "444",
           "address": "aliqua ad qui in anim"
       }
     });

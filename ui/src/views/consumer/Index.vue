@@ -30,10 +30,10 @@
         </v-container>
         <v-spacer></v-spacer>
         <v-btn
-          @click="createConsumer(consumer)"
+          @click="createConsumer(consumer); $router.push('/generation-methods')"
           class="mr-2"
         >
-          submit
+          Submit
         </v-btn>
         <v-btn to="/">
           Cancel
