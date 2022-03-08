@@ -9,6 +9,17 @@ const routes = [
         component: () => import('@/views/consumer/Index.vue')
       }
     ]
+  },
+  {
+    path: '/generation-methods',
+    component: () => import('@/layouts/basic/Index.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Methods',
+        component: () => import('@/views/generation-methods/Index.vue')
+      }
+    ]
   }
 ]
 
