@@ -1,7 +1,7 @@
 <template>
-  <section id="producer">
+  <section id="supplier">
     <v-row no-gutters class="pa-2">
-      <h1>Producer</h1>
+      <h1>Supplier</h1>
       <v-form v-model="valid">
         <v-container>
           <v-row>
@@ -10,7 +10,7 @@
               md="4"
             >
               <v-text-field
-                v-model="producer.address"
+                v-model="supplier.address"
                 label="Address"
                 required
               ></v-text-field>
@@ -20,7 +20,7 @@
               md="4"
             >
               <v-text-field
-                v-model="producer.postcode"
+                v-model="supplier.postcode"
                 :counter="4"
                 label="Post Code"
                 required
@@ -31,7 +31,7 @@
               md="4"
             >
               <v-select
-                v-model="producer.method"
+                v-model="supplier.method"
                 :items="methods"
                 label="Generation Method"
               ></v-select>
@@ -40,7 +40,7 @@
         </v-container>
         <v-spacer></v-spacer>
         <v-btn
-          @click="createProducer(producer)"
+          @click="createProducer(supplier)"
           class="mr-2"
         >
           submit
@@ -64,17 +64,17 @@ export default {
   data: () => ({
     valid: false,
     methods: ['solar', 'wind', 'hydro', 'geo'],
-    producer: {
+    supplier: {
       method: '',
       address: '',
       postcode: ''
     }
   }),
   methods: {
-    ...mapActions('producers', ['createProducer'])
+    ...mapActions('suppliers', ['createProducer'])
   },
   created () {
-    this.$store.dispatch('producers/initialise')
+    this.$store.dispatch('suppliers/initialise')
   }
 }
 </script>

@@ -29,9 +29,9 @@
                 color="purple"
                 outlined
                 x-large
-                to="/producer">
+                to="/supplier">
                 <v-icon size="40" class="mr-2">mdi-solar-panel-large</v-icon>
-                producers
+                suppliers
               </v-btn>
               <v-btn
                 class="align-self-end ma-5"

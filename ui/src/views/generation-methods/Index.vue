@@ -28,7 +28,7 @@
                 class="align-self-end ma-5"
                 color="green"
                 x-large
-                to="/producer">
+                to="/supplier">
                 <v-icon size="40" class="mr-2">mdi-solar-panel-large</v-icon>
                 Solar
               </v-btn>
