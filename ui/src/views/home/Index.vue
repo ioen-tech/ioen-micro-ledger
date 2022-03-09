@@ -18,7 +18,7 @@
                 tag="h1"
               >
                 <span
-                  :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
+                  :class="[$vuetify.breakpoint.smAndDown ? 'display-1': 'display-2']"
                   class="font-weight-black"
                 >
                   Join The Internet Of Energy Network
@@ -27,6 +27,7 @@
               <v-btn
                 class="align-self-end ma-5"
                 color="purple"
+                width="250"
                 outlined
                 x-large
                 to="/supplier">
@@ -37,6 +38,7 @@
                 class="align-self-end ma-5"
                 outlined
                 color="green"
+                width="250"
                 x-large
                 to="/consumer">
                 <v-icon size="40" class="mr-2">mdi-account-outline</v-icon>

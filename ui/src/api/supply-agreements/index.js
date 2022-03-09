@@ -6,7 +6,7 @@ import { AppWebsocket } from '@holochain/client'
 let cellId = null
 let hcClient = null
 
-export function connect (port) {
+export function connect (port, callback) {
   AppWebsocket.connect(`ws://localhost:${port}`, 12000)
     .then(socket => {
       hcClient = socket
@@ -15,6 +15,7 @@ export function connect (port) {
       })
         .then(appInfo => {
           cellId = appInfo.cell_data.find(data => data.role_id === 'ioen_micro_ledger').cell_id
+          callback(cellId)
         })
     })
 }
@@ -41,13 +42,23 @@ export function deleteSupplyAgreement (supplyAgreement) {
   }).then(result => console.log(result))
 }
 
-export function listSupplyAgreements (filter, callback) {
+export function listSuppliersAgreements (supplier, callback) {
   hcClient.callZome({
     cap: null,
     cell_id: cellId,
     zome_name: 'ledger',
-    fn_name: 'list_supply_agreements',
+    fn_name: 'list_suppliers_agreements',
     provenance: cellId[1],
-    payload: filter
+    payload: supplier
+  }).then(result => callback(result))
+}
+
+export function listAllSupplyAgreements (callback) {
+  hcClient.callZome({
+    cap: null,
+    cell_id: cellId,
+    zome_name: 'ledger',
+    fn_name: 'list_all_supply_agreements',
+    provenance: cellId[1]
   }).then(result => callback(result))
 }

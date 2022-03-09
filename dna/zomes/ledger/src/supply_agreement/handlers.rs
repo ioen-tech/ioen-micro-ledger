@@ -40,12 +40,12 @@ pub struct ExistingSupplyAgreement {
 pub fn list_suppliers_agreements(supplier_entry_hash: EntryHashB64) -> ExternResult<Vec<SupplyAgreement>> {
   let links = get_links(EntryHash::from(supplier_entry_hash.clone()), None)?;
 
-  let suppliers: Vec<SupplyAgreement> = links
+  let supply_agreements: Vec<SupplyAgreement> = links
       .into_iter()
       .filter_map(|link| get_supply_agreement(EntryHashB64::from(link.target) ).transpose())
       .collect::<ExternResult<Vec<SupplyAgreement>>>()?;
 
-  Ok(suppliers)
+  Ok(supply_agreements)
 }
 
 #[hdk_extern]
@@ -54,12 +54,12 @@ pub fn list_all_supply_agreements(_: ()) -> ExternResult<Vec<SupplyAgreement>> {
 
   let links = get_links(path.path_entry_hash()?, None)?;
 
-  let suppliers: Vec<SupplyAgreement> = links
+  let supply_agreements: Vec<SupplyAgreement> = links
       .into_iter()
       .filter_map(|link| get_supply_agreement(EntryHashB64::from(link.target) ).transpose())
       .collect::<ExternResult<Vec<SupplyAgreement>>>()?;
 
-  Ok(suppliers)
+  Ok(supply_agreements)
 }
 
 #[hdk_extern]

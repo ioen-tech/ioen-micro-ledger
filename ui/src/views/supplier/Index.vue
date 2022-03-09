@@ -40,7 +40,7 @@
         </v-container>
         <v-spacer></v-spacer>
         <v-btn
-          @click="createSupplier(supplier)"
+          @click="createSupplier(supplier);  $router.push('/supply-agreements')"
           class="mr-2"
         >
           submit

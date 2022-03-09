@@ -1,16 +1,31 @@
 <template>
   <section id="supply-agreements">
     <v-row no-gutters class="pa-2">
+      <h1>All Suppliers Agreements</h1>
+      <v-col class="pa-2"
+        cols="12"
+        v-if="supplyAgreements.length === 0">
+        <h3>No Supply Agreements yet.</h3>
+      </v-col>
+      <v-col class="pa-2"
+        cols="12"
+        v-else
+        v-for="(supplyAgreement, index) in supplyAgreements"
+        :key="index">
+        <supply-agreement :agreement="supplyAgreement" />
+      </v-col>
+    </v-row>
+    <v-row no-gutters class="pa-2">
       <h1>New Supply Agreement</h1>
       <v-form v-model="valid">
         <v-container>
-          <v-row>
+          <v-row no-gutters>
             <v-col
               cols="12"
               md="4"
             >
               <v-text-field
-                v-model="supplier.from"
+                v-model="agreement.from"
                 label="From"
                 required
               ></v-text-field>
@@ -20,7 +35,7 @@
               md="4"
             >
               <v-text-field
-                v-model="supplier.to"
+                v-model="agreement.to"
                 label="To"
                 required
               ></v-text-field>
@@ -30,7 +45,7 @@
               md="4"
             >
               <v-text-field
-                v-model="supplier.rate"
+                v-model="agreement.rate"
                 label="Rate"
                 required
               ></v-text-field>
@@ -39,7 +54,7 @@
         </v-container>
         <v-spacer></v-spacer>
         <v-btn
-          @click="createS(agreement)"
+          @click="createSupplyAgreement(agreement)"
           class="mr-2"
         >
           submit
@@ -53,12 +68,14 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
+import SupplyAgreement from '../../components/SupplyAgreement.vue'
 
 export default {
   name: 'SupplyAgreements',
 
   components: {
+    SupplyAgreement
   },
   data: () => ({
     valid: false,
@@ -68,11 +85,14 @@ export default {
       rate: ''
     }
   }),
+  computed: {
+    ...mapState('supply-agreements', ['supplyAgreements'])
+  },
   methods: {
-    ...mapActions('suppliers', ['createS'])
+    ...mapActions('supply-agreements', ['createSupplyAgreement'])
   },
   created () {
-    this.$store.dispatch('suppliers/initialise')
+    this.$store.dispatch('supply-agreements/initialise')
   }
 }
 </script>

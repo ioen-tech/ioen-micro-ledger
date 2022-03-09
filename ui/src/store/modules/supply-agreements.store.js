@@ -10,32 +10,43 @@ export default {
     supplyAgreements: []
   },
   actions: {
-    async initialise () {
-      SupplyAgreementsApi.connect('5000')
+    async initialise ({ dispatch }) {
+      SupplyAgreementsApi.connect('5000', (cellId) => {
+        dispatch('listSupplyAgreements')
+      })
     },
-    createSupplyAgreement ({ commit }, payload) {
-      const supplyAgreement = payload
-      commit('createSupplyAgreement', supplier)
-      SupplyAgreementsApi.createSupplyAgreement(supplyAgreement, (committedSupplyAgreement) => {
+    createSupplyAgreement ({ rootState, commit }, payload) {
+      const agreement = {
+        from: parseInt(payload.from),
+        to: parseInt(payload.to),
+        rate: parseInt(payload.rate)
+      }
+      const newSupplyAgreement = {
+        supplier_entry_hash: rootState.suppliers.supplier.entryHash,
+        supply_agreement: agreement
+      }
+      commit('createSupplyAgreement', payload)
+      SupplyAgreementsApi.createSupplyAgreement(newSupplyAgreement, (committedSupplyAgreement) => {
         commit('updateSupplyAgreement', committedSupplyAgreement)
       })
     },
     listSupplyAgreements ({ commit }) {
-      SupplyAgreementsApi.listSupplyAgreements(result => {
-        commit('setSupplyAgreements', result.supplyAgreements)
+      SupplyAgreementsApi.listAllSupplyAgreements(result => {
+        console.log(result)
+        commit('setSupplyAgreements', result)
       })
     }
   },
   mutations: {
     setSupplyAgreements (state, payload) {
-      state.suppliers = payload
+      state.supplyAgreements = payload
     },
     createSupplyAgreement (state, payload) {
-      state.suppliers.splice(0, 0, payload)
+      state.supplyAgreements.splice(0, 0, payload)
     },
     updateSupplyAgreement (state, payload) {
-      state.supplyAgreements = state.supplyAgreements.map(supplier =>
-        supplier.uuid !== payload.uuid ? supplier : { ...supplier, ...payload }
+      state.supplyAgreements = state.supplyAgreements.map(supplyAgreement =>
+        supplyAgreement.uuid !== payload.uuid ? supplyAgreement : { ...supplyAgreement, ...payload }
       )
     },
     deleteSupplyAgreement (state, payload) {
