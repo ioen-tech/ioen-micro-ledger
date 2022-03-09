@@ -4,20 +4,21 @@
       app
       color="white"
     >
-      <a href="/" style="text-decoration: none; color: black;">
-        <div class="d-flex align-center">
-          <v-img
-            alt="Vuetify Logo"
-            class="shrink mr-2"
-            contain
-            :src="require('@/assets/logo.svg')"
-            transition="scale-transition"
-            width="40"
-          />
-          <h2>Internet Of Energy</h2>
-        </div>
-      </a>
+      <v-btn x-large icon to="/">
+        <v-img
+          alt="IOEN Logo"
+          class="shrink"
+          :src="require('@/assets/logo.svg')"
+          width="40"
+        />
+      </v-btn><h2>Internet Of Energy</h2>
       <v-spacer></v-spacer>
+      <v-icon v-if="supplier.entryHash !== undefined">
+        mdi-account
+      </v-icon>
+      <v-icon v-else>
+        mdi-login
+      </v-icon>
     </v-app-bar>
     <v-main>
       <router-view/>
