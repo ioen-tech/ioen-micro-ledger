@@ -32,3 +32,5 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+https://github.com/holochain-open-dev/wiki/wiki/How-to-upgrade-the-Holochain-version-of-a-project-with-Nix

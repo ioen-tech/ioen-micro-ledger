@@ -26,8 +26,10 @@ export default {
       state.supplier = payload
     },
     updateSupplier (state, payload) {
-      console.log(payload)
-      state.supplier.entryHash = payload.entry_hash
+      const supp = { ...state.supplier }
+      supp.entryHash = payload.entry_hash
+      supp.headerHash = payload.header_hash
+      state.supplier = supp
     }
   },
   modules: {}
