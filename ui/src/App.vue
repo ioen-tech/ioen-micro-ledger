@@ -19,7 +19,6 @@
       </a>
       <v-spacer></v-spacer>
     </v-app-bar>
-
     <v-main>
       <router-view/>
     </v-main>
@@ -27,12 +26,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
-
-  data: () => ({
-    //
-  })
+  computed: {
+    ...mapState('suppliers', ['supplier'])
+  }
 }
 </script>

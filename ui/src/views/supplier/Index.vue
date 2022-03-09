@@ -40,7 +40,7 @@
         </v-container>
         <v-spacer></v-spacer>
         <v-btn
-          @click="createProducer(supplier)"
+          @click="createSupplier(supplier);  $router.push('/supply-agreements')"
           class="mr-2"
         >
           submit
@@ -57,7 +57,7 @@
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'Producer',
+  name: 'Supplier',
 
   components: {
   },
@@ -71,7 +71,7 @@ export default {
     }
   }),
   methods: {
-    ...mapActions('suppliers', ['createProducer'])
+    ...mapActions('suppliers', ['createSupplier'])
   },
   created () {
     this.$store.dispatch('suppliers/initialise')

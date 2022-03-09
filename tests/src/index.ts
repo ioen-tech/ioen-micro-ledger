@@ -9,25 +9,25 @@ import ledger_bill from './ioen_micro_ledger/ledger/bill';
 
 let orchestrator: Orchestrator<any>;
 
-orchestrator = new Orchestrator();
-ledger_consumer(orchestrator);
-orchestrator.run();
+// orchestrator = new Orchestrator();
+// ledger_consumer(orchestrator);
+// orchestrator.run();
 
-orchestrator = new Orchestrator();
-ledger_supplier(orchestrator);
-orchestrator.run();
+// orchestrator = new Orchestrator();
+// ledger_supplier(orchestrator);
+// orchestrator.run();
 
 orchestrator = new Orchestrator();
 ledger_supply_agreement(orchestrator);
 orchestrator.run();
 
-orchestrator = new Orchestrator();
-ledger_supply_block(orchestrator);
-orchestrator.run();
+// orchestrator = new Orchestrator();
+// ledger_supply_block(orchestrator);
+// orchestrator.run();
 
-orchestrator = new Orchestrator();
-ledger_bill(orchestrator);
-orchestrator.run();
+// orchestrator = new Orchestrator();
+// ledger_bill(orchestrator);
+// orchestrator.run();
 
 
 

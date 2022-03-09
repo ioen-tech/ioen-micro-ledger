@@ -18,7 +18,7 @@
                 tag="h1"
               >
                 <span
-                  :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
+                  :class="[$vuetify.breakpoint.smAndDown ? 'display-1': 'display-2']"
                   class="font-weight-black"
                 >
                   Select your preferred energy source
@@ -27,6 +27,7 @@
               <v-btn
                 class="align-self-end ma-5"
                 color="green"
+                width="250"
                 x-large
                 to="/supplier">
                 <v-icon size="40" class="mr-2">mdi-solar-panel-large</v-icon>
@@ -35,6 +36,7 @@
               <v-btn
                 class="align-self-end ma-5"
                 color="green"
+                width="250"
                 x-large
                 to="/consumer">
                 <v-icon size="40" class="mr-2">mdi-wind-turbine</v-icon>
@@ -43,6 +45,7 @@
               <v-btn
                 class="align-self-end ma-5"
                 color="green"
+                width="250"
                 x-large
                 to="/consumer">
                 <v-icon size="40" class="mr-2">mdi-car-battery</v-icon>

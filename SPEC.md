@@ -4,11 +4,7 @@
 
 The ioen-micro-ledger enables Suppliers and Consumers of electricity to trade IOENs via a distributed Supply Agreement System where each micro grid can have its own set of agreements. Suppliers and Consumers of power can then negotiate a Supply Agreement that is tailored for them and referenced for billing as power is supplied.
 
-Scenario 1: A Consumer has agreements with 3 homes on their street and the battery for the street over. The Consumer needs 4 kWh and is supplied 1 kWh from each.
-
-Scenario 2: When a Consumer needs 1 kWh it will come from first available preference.
-
-The power distribution bus manages the power connections. The ioen-micro-ledger is logging that power was supplied not deciding who should be the supplier.
+In this first iteration a Consumer will have an agreement with 1 supplier and the supply agreements will be simple, eg: 20c/kWh, 25c/kWh
 
 A Consumer can also be a Supplier, such as a typical household with solar power and a battery, but can only be one or the other during a Supply Block. This is because it is assumed if a Consumer is producing power that is the best value power they can consume. If they are producing more power then they are consuming then they can be a Supplier for that Supply Block.
 
@@ -18,14 +14,17 @@ A Consumer can also be a Supplier, such as a typical household with solar power 
 sequenceDiagram
     participant H as ioen-micro-ledger
     actor C as Consumer
-    participant P1 as Supplier1
+    actor P1 as Supplier1
     participant P2 as Supplier2
-    loop Negotiate Supply Agreements
-        H->>C: List Suppliers
-        C->>C: Analyse Supply Agreements
-        C->>P1: Sign Supply Agreement
-        C->>P2: Sign Supply Agreement
-    end 
+    P1->>H: Register
+    P1->>H: Create Supply Agreement
+    P2->>H: Register
+    P2->>H: Create Supply Agreement
+    C->>H: Register
+    H->>C: List Suppliers
+    C->>C: Analyse Supply Agreements
+    C->>P1: Sign Supply Agreement
+    C->>P2: Sign Supply Agreement
 
     Note over H: HoloFuel clone manages payment
     loop Supplier Bill Cycle
