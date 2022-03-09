@@ -1,111 +1,86 @@
-# ***** ioen-ledger *****
 
+# ioen-micro-ledger
 
-## Pre-Requisites
+## Environment Setup
 
-Follow the instructions at https://developer.holochain.org/install/:
-1. Install nixos, the Holochain operating system
-2. Install the Holochain development tools, including the Rust compiler, crates, and environment
-
-The version of Holochain we have currently built and tested to is version 0.0.122, 
-```[nix-shell:~]$ holochain --version```
-
-## Compiling
+1. Install the holochain dev environment (only nix-shell is required): https://developer.holochain.org/docs/install/
+2. Enable Holochain cachix with:
 
 ```bash
-cd tem/dna
-CARGO_TARGET_DIR=target cargo build --release --target wasm32-unknown-unknown
-hc dna pack workdir/dna
-hc app pack workdir/happ
+nix-env -iA cachix -f https://cachix.org/api/v1/install
+cachix use holochain-ci
 ```
 
-This will output a `tem.happ` dna binary in the `tem/dna/workdir/happ` folder.
-
-## Running the tests
-
-After compiling, to run the tests:
+3. Clone this repo and `cd` inside of it.
+4. Enter the nix shell by running this in the root folder of the repository: 
 
 ```bash
-cd tem/tests
-npm install # if this is first run
-npm test
+nix-shell
+npm install
 ```
 
-These tests will automatically boot up the relayers and test their integration as well.
+This will install all the needed dependencies in your local environment, including `holochain`, `hc` and `npm`.
 
-## Run agent directly with relayer
+Run all the other instructions in this README from inside this nix-shell, otherwise **they won't work**.
 
-Open three terminals:
+## Bootstrapping a network
 
-- First terminal:
-```bash
-hc sandbox generate 
-RUST_LOG=debug holochain --interactive
-```
-
-If you're restarting the conductor, you may want to delete the database in disk, with `rm -rf <DB_PATH>`. You can see what database path you have configured by looking at your conductor-config.toml, default location in linux is `$HOME/.config/holochain/conductor-config.toml`
-
-- Second terminal:
-```bash
-cd tem/scripts/install-instances
-npm install # If this is the first run
-PORTS=1111 DNA_PATH=~/projects/ioen-ledger/tem/dna/tem.dna node index.js
-```
-
-The `DNA_PATH` should be adjusted to your needs, to point to the `tem.dna` file that you have locally
-
-The `PORTS` variable is the port in which the instance of the app is going to be running.
-
-- Third terminal:
-```bash
-cd tem/express-relayer
-npm install # If this is the first run
-CONDUCTOR_URL=ws://localhost:1111 DEBUG=true node index.js
-```
-
-## Creating the docker image
-
-### Holochain Ledger
-
-replace `.x` with the next incremental number, when you run the `docker build ...` command.
+Create a whole network of nodes connected to each other and their respective UIs with.
 
 ```bash
-cd tem
-docker build . -t ioen/ioen-ledger:ledger-0.x
+npm run network 3
 ```
 
-### Push to docker hub
+Substitute the "3" for the number of nodes that you want to bootstrap in your network.
+
+This will also bring up the Holochain Playground for advanced introspection of the conductors.
+
+## Running an agent
+ 
+If you only want to run a single conductor and a UI connected to it:
 
 ```bash
-docker push ioen/ioen-ledger:ledger-0.x
+npm start
 ```
 
-### Docker compose files
-
-Update the docker compose files, with the latest image tags
-- docker/cloud/docker-compose.yml
-- docker/edge-0/docker-compose.yml
-- docker/edge-1/docker-compose.yml
-
-## Test Network
-
-To operate the small test network...
+To run another agent, open another terminal, and execute again:
 
 ```bash
-cd docker/cloud/
-docker-compose up
+npm start
 ```
 
-Then in another terminal:
+Each new agent that you create this way will get assigned its own port and get connected to the other agents.
+
+## Running the DNA tests
 
 ```bash
-cd docker/edge-0/
-docker-compose up
+npm run test
 ```
 
-Then in another terminal:
+## Building the DNA
 
 ```bash
-cd docker/edge-1/
-docker-compose up
+npm run build:happ
 ```
+
+## Package
+
+To package the web happ:
+
+``` bash
+npm run package
+```
+
+You'll have the `ioen-micro-ledger.webhapp` in `workdir`. This is what you should distribute so that the Holochain Launcher can install it.
+
+You will also have its subcomponent `ioen-micro-ledger.happ` in the same folder`.
+
+## Documentation
+
+This repository is using this tooling:
+
+- [NPM Workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces/): npm v7's built-in monorepo capabilities.
+- [hc](https://github.com/holochain/holochain/tree/develop/crates/hc): Holochain CLI to easily manage Holochain development instances.
+- [@holochain/tryorama](https://www.npmjs.com/package/@holochain/tryorama): test framework.
+- [@holochain/conductor-api](https://www.npmjs.com/package/@holochain/conductor-api): client library to connect to Holochain from the UI.
+- [@holochain-playground/cli](https://www.npmjs.com/package/@holochain-playground/cli): introspection tooling to understand what's going on in the Holochain nodes.

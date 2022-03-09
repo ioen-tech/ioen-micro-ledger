@@ -1,42 +1,86 @@
-# Specification for ioen-ledger 
+# Specification for ioen-micro-ledger
 
 ## Description
-The ioen-ledger is the most basic component in the IOEN architecture; it communicates to the peer-to-peer distributed framework, Holochain.  It is associated
-with one agent.  Functions:
-- reads its agent's ID
-- sends a peer-to-peer message to another agent ID from this agent
-- provides a REST API to write a record.  The record format is undefined, which allows any schema to be accommodated.  The agent ID is required.
-- provides the API to fetch one or more records from one agent.  The records are retrieved based on the agent ID, and allow a timeframe
--- `give me all records on this agent between timestamp m and timestamp n, where m > n`
-- performance tests
-- scripts to spin up virtual machines based on IP address
-- creation of a Docker container
 
-## Technology
-This includes:
-- Holochain core, in Rust.  Some uses may not need Rust expertise
-- Express-relayer, the API, is written in Javascript
+The ioen-micro-ledger enables Suppliers and Consumers of electricity to trade IOENs via a distributed Supply Agreement System where each micro grid can have its own set of agreements. Suppliers and Consumers of power can then negotiate a Supply Agreement that is tailored for them and referenced for billing as power is supplied.
 
-## Uses
-- None. This is a core component.
+In this first iteration a Consumer will have an agreement with 1 supplier and the supply agreements will be simple, eg: 20c/kWh, 25c/kWh
 
-## Used by
-- https://github.com/ioen-tech/ioen-discovery
-- https://github.com/ioen-tech/ioen-ledger-report-generator
+A Consumer can also be a Supplier, such as a typical household with solar power and a battery, but can only be one or the other during a Supply Block. This is because it is assumed if a Consumer is producing power that is the best value power they can consume. If they are producing more power then they are consuming then they can be a Supplier for that Supply Block.
 
-## Acceptance criteria
-1. Query an agent, get its agent ID
-2. Send a record to the agent
-3. Fetch a record from the agent
-4. Fetch a record from the agent for a time period
-5. Send a message from one agent to another, confirm the other agent received it
-6. Spin up many agents and run the performance tests
+### Sequence of events
 
-## This version
-0.1 is very primitive (it has been adapted from a commercial project so functionality has been removed).  Future functionality will include:
-- Discovery of other agents
-- A basic set of validation rules
-- An enhanced set of validation rules that represent the microDAO (applied for all agents operating in the DHT)
+```mermaid
+sequenceDiagram
+    participant H as ioen-micro-ledger
+    actor C as Consumer
+    actor P1 as Supplier1
+    participant P2 as Supplier2
+    P1->>H: Register
+    P1->>H: Create Supply Agreement
+    P2->>H: Register
+    P2->>H: Create Supply Agreement
+    C->>H: Register
+    H->>C: List Suppliers
+    C->>C: Analyse Supply Agreements
+    C->>P1: Sign Supply Agreement
+    C->>P2: Sign Supply Agreement
 
-## Other functionality elsewhere
-- Holochain rules are encapsulated in the DNA.  IOEN will provide a tool to allow these to be specified and shared in another component.
+    Note over H: HoloFuel clone manages payment
+    loop Supplier Bill Cycle
+        P1-->>H: Create Bill
+        P2-->>H: Create Bill
+        loop Power Supply Cycle
+            P1-->>H: Issue credit to consumer 
+            Note over P1: Supply power to consumer
+            P1->>P1: Create Supply Block
+            C->>P1: Confirm Supply Block
+            P2-->>H: Issue credit to consumer 
+            Note over P2: Supply power to consumer
+            P2->>P2: Create Supply Block
+        end
+        P1-->>H: Issue Bill
+        P2-->>H: Issue Bill
+        H-->>P1: Pays Bill
+        H-->>P2: Pays Bill
+    end
+```
+
+> MVP of ioen-micro-ledger will implement the solid lines in the sequence diagram
+> Quality of service metrics added to Supply Block used for reputation
+
+### Registering
+
+When a supplier registers to be part of the Internet Of ENergy their method of producing power and post code are recorded in their Profile along with their name & address. Consumers can then choose which power sources they are happy to consume from locally available suppliers.
+
+eg: A solar Supplier in post code 3149 would be linked to the Path "Supplier.solar.3149" in Holochain.
+
+When a Consumer registers, the generation methods they wish to consume are stored in their Profile along with their name & address.
+
+eg: A Consumer Profile in post code 3149 would be linked to the Path "Consumer.3149" in Holochain.
+
+Available post codes will be assigned each cycle and Suppliers in those post codes will be available for bidding.
+
+If you have already registered as either a Consumer or Supplier and register again the form will be auto filled with the previous entries.
+
+```mermaid
+erDiagram
+    SupplierPath ||--o{ Supplier : register
+    ConsumerPath ||--o{ Consumer : register
+    Consumer ||--o{ SupplyAgreement : negotiates
+    SupplyAgreement o{ --||Supplier : negotiates
+    Supplier ||--o{ Bill : issues
+    Consumer ||--o{ Bill : issued
+    SupplyAgreement ||--o{ SupplyBlock : execute-agreement
+    Supplier ||--o{ SupplyBlock : power-supplied
+    Consumer ||--o{ SupplyBlock : power-received
+    SupplyBlock }o--|| Bill : supply-recorded
+    Bill ||--|| HoloFuel-Clone : paid-with
+```
+
+### Billing -> HoloFuel clone
+
+A Consumer who buys power from one or more Suppliers during a billing cycle will be issued a Bill by each Supplier.
+
+IOEN Fuel is the mutual credit currency used to pay for energy generated by a distributed network of energy suppliers who provide electrical power.
+![IOENs diagram](./IOENs.png)

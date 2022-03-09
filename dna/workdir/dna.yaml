@@ -1,0 +1,9 @@
+---
+manifest_version: "1"
+name: ioen_micro_ledger
+uuid: 00000000-0000-0000-0000-000000000000
+properties: ~
+zomes: 
+  - name: ledger
+    bundled: ../../target/wasm32-unknown-unknown/release/ledger.wasm
+

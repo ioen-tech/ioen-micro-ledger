@@ -1,8 +1,0 @@
----
-manifest_version: "1"
-name: tem
-uuid: ~
-properties: ~
-zomes: 
-  - name: tem
-    bundled: ../../target/wasm32-unknown-unknown/release/tem.wasm
