@@ -3,7 +3,7 @@
       <v-card-text class="content">
         <v-row align="center">
         <v-col
-          class="text-h3"
+          class="text-h5"
           cols="12"
         >
           {{ agreement.rate }} c/kWh

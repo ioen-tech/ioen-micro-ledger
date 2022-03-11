@@ -16,6 +16,7 @@ export default {
       })
     },
     createSupplyAgreement ({ rootState, commit }, payload) {
+      console.log(payload)
       const agreement = {
         from: parseInt(payload.from),
         to: parseInt(payload.to),
@@ -42,7 +43,7 @@ export default {
       state.supplyAgreements = payload
     },
     createSupplyAgreement (state, payload) {
-      state.supplyAgreements.splice(0, 0, payload)
+      state.supplyAgreements.push(payload)
     },
     updateSupplyAgreement (state, payload) {
       state.supplyAgreements = state.supplyAgreements.map(supplyAgreement =>
