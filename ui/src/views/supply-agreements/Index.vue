@@ -1,7 +1,7 @@
 <template>
   <section id="supply-agreements">
     <v-row no-gutters class="pa-2">
-      <h1>All Suppliers Agreements</h1>
+      <h1>Suppliers Agreements</h1>
       <v-col class="pa-2"
         cols="12"
         v-if="supplyAgreements.length === 0">
@@ -14,55 +14,47 @@
         :key="index">
         <supply-agreement :agreement="supplyAgreement" />
       </v-col>
-    </v-row>
-    <v-row no-gutters class="pa-2">
-      <h1>New Supply Agreement</h1>
-      <v-form v-model="valid">
-        <v-container>
-          <v-row no-gutters>
-            <v-col
-              cols="12"
-              md="4"
-            >
-              <v-text-field
-                v-model="agreement.from"
-                label="From"
-                required
-              ></v-text-field>
-            </v-col>
-            <v-col
-              cols="12"
-              md="4"
-            >
-              <v-text-field
-                v-model="agreement.to"
-                label="To"
-                required
-              ></v-text-field>
-            </v-col>
-            <v-col
-              cols="12"
-              md="4"
-            >
-              <v-text-field
-                v-model="agreement.rate"
-                label="Rate"
-                required
-              ></v-text-field>
-            </v-col>
-          </v-row>
-        </v-container>
-        <v-spacer></v-spacer>
+      <v-col class="pa-2"
+        cols="12">
         <v-btn
-          @click="createSupplyAgreement(agreement)"
-          class="mr-2"
-        >
-          submit
+          dark
+          @click.stop="newAgreementDialog = true">
+          Create New Agreement
         </v-btn>
-        <v-btn to="/">
-          Cancel
-        </v-btn>
-      </v-form>
+      </v-col>
+    </v-row>
+    <v-row>
+    <v-dialog
+      v-model="newAgreementDialog"
+      transition="dialog-bottom-transition"
+    >
+      <v-card>
+        <v-card-title>New Supply Agreement</v-card-title>
+        <v-row no-gutters class="pa-2">
+          <v-col
+            cols="12"
+            md="4"
+          >
+            <v-text-field
+              v-model="agreement.rate"
+              label="Rate"
+              required
+            ></v-text-field>
+          </v-col>
+        </v-row>
+        <v-card-actions>
+          <v-btn
+            @click="createSupplyAgreement(agreement); newAgreementDialog = false"
+            class="mr-2"
+          >
+            submit
+          </v-btn>
+          <v-btn @click.stop="newAgreementDialog = false">
+            Cancel
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     </v-row>
   </section>
 </template>
@@ -78,10 +70,10 @@ export default {
     SupplyAgreement
   },
   data: () => ({
-    valid: false,
+    newAgreementDialog: false,
     agreement: {
-      from: '',
-      to: '',
+      from: '1',
+      to: '1',
       rate: ''
     }
   }),
