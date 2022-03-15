@@ -11,7 +11,7 @@ export default {
   },
   actions: {
     async initialise ({ dispatch }) {
-      SupplyAgreementsApi.connect('5000', (cellId) => {
+      SupplyAgreementsApi.connect(process.env.VUE_APP_HC_PORT, (cellId) => {
         dispatch('listSupplyAgreements')
       })
     },
