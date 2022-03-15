@@ -11,7 +11,8 @@ export default {
   },
   actions: {
     async initialise () {
-      SuppliersApi.connect('5000')
+      console.log(process.env)
+      SuppliersApi.connect(process.env.VUE_APP_HC_PORT)
     },
     createSupplier ({ commit }, payload) {
       const supplier = payload

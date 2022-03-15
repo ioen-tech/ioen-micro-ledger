@@ -11,7 +11,7 @@ export default {
   },
   actions: {
     async initialise ({ dispatch }) {
-      ConsumersApi.connect('5000')
+      ConsumersApi.connect(process.env.VUE_APP_HC_PORT)
     },
     createConsumer ({ commit }, payload) {
       const consumer = payload
