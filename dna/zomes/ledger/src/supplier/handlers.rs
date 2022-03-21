@@ -1,6 +1,9 @@
 use hdk::prelude::*;
 use hdk::prelude::holo_hash::*;
 use super::Supplier;
+use super::UpdateSupplierInput;
+use super::SupplierHashes;
+use super::SupplierFilter;
 
 #[hdk_extern]
 pub fn get_supplier(entry_hash: EntryHashB64) -> ExternResult<Option<Supplier>> {
@@ -12,16 +15,23 @@ pub fn get_supplier(entry_hash: EntryHashB64) -> ExternResult<Option<Supplier>> 
       let supplier: Supplier = element.entry()
         .to_app_option()?
         .ok_or(WasmError::Guest("Could not deserialize element to Supplier.".into()))?;
-    
       Ok(Some(supplier))
     }
   }
 }
 
-#[derive(Serialize, Deserialize, Debug)]
-pub struct SupplierFilter {
-  postcode: String,
-  method: String,
+#[hdk_extern]
+pub fn agent_info_supplier(_: ()) -> ExternResult<Vec<Supplier>> {
+  let agent_info = agent_info()?;
+  let link_tag: LinkTag = LinkTag::new(String::from("Supplier"));
+  let links = get_links(EntryHash::from(agent_info.agent_initial_pubkey), Some(link_tag))?;
+
+  let suppliers: Vec<Supplier> = links
+      .into_iter()
+      .filter_map(|link| get_supplier(EntryHashB64::from(link.target) ).transpose())
+      .collect::<ExternResult<Vec<Supplier>>>()?;
+
+  Ok(suppliers)
 }
 
 #[hdk_extern]
@@ -37,14 +47,10 @@ pub fn list_suppliers(supplier_filter: SupplierFilter) -> ExternResult<Vec<Suppl
 
   Ok(suppliers)
 }
-#[derive(Serialize, Deserialize, Debug)]
-pub struct NewSupplierOutput {
-  header_hash: HeaderHashB64,
-  entry_hash: EntryHashB64,
-}
 
 #[hdk_extern]
-pub fn create_supplier(supplier: Supplier) -> ExternResult<NewSupplierOutput> {
+pub fn create_supplier(supplier: Supplier) -> ExternResult<SupplierHashes> {
+  let agent_info = agent_info()?;
   let supplier_path = format!("Suppliers.{}.{}", supplier.method, supplier.postcode);
   let path = Path::from(supplier_path);
   path.ensure()?;
@@ -54,8 +60,10 @@ pub fn create_supplier(supplier: Supplier) -> ExternResult<NewSupplierOutput> {
   let entry_hash = hash_entry(&supplier)?;
 
   create_link(path.path_entry_hash()?, entry_hash.clone(), ())?;
+  let link_tag: LinkTag = LinkTag::new(String::from("Supplier"));
+  create_link(EntryHash::from(agent_info.agent_initial_pubkey), entry_hash.clone(),  link_tag)?;
 
-  let output = NewSupplierOutput {
+  let output = SupplierHashes {
     header_hash: HeaderHashB64::from(header_hash),
     entry_hash: EntryHashB64::from(entry_hash)
   };
@@ -63,20 +71,13 @@ pub fn create_supplier(supplier: Supplier) -> ExternResult<NewSupplierOutput> {
   Ok(output)
 }
 
-
-#[derive(Serialize, Deserialize, Debug)]
-pub struct UpdateSupplierInput {
-  original_header_hash: HeaderHashB64,
-  updated_supplier: Supplier
-}
-
 #[hdk_extern]
-pub fn update_supplier(input: UpdateSupplierInput) -> ExternResult<NewSupplierOutput> {
+pub fn update_supplier(input: UpdateSupplierInput) -> ExternResult<SupplierHashes> {
   let header_hash = update_entry(HeaderHash::from(input.original_header_hash), &input.updated_supplier)?;
 
   let entry_hash = hash_entry(&input.updated_supplier)?;
 
-  let output = NewSupplierOutput {
+  let output = SupplierHashes {
     header_hash: HeaderHashB64::from(header_hash),
     entry_hash: EntryHashB64::from(entry_hash)
   };

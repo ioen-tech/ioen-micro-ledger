@@ -27,6 +27,7 @@ pub struct NewConsumerOutput {
 
 #[hdk_extern]
 pub fn create_consumer(consumer: Consumer) -> ExternResult<NewConsumerOutput> {
+  let agent_info = agent_info()?;
   let consumer_path = format!("Consumer.{}", consumer.postcode);
   let path = Path::from(consumer_path);
   path.ensure()?;
@@ -36,6 +37,8 @@ pub fn create_consumer(consumer: Consumer) -> ExternResult<NewConsumerOutput> {
   let entry_hash = hash_entry(&consumer)?;
 
   create_link(path.path_entry_hash()?, entry_hash.clone(), ())?;
+  let link_tag: LinkTag = LinkTag::new(String::from("Consumer"));
+  create_link(EntryHash::from(agent_info.agent_initial_pubkey), entry_hash.clone(), link_tag)?;
 
   let output = NewConsumerOutput {
     header_hash: HeaderHashB64::from(header_hash),
@@ -45,6 +48,19 @@ pub fn create_consumer(consumer: Consumer) -> ExternResult<NewConsumerOutput> {
   Ok(output)
 }
 
+#[hdk_extern]
+pub fn agent_info_consumer(_: ()) -> ExternResult<Vec<Consumer>> {
+  let agent_info = agent_info()?;
+  let link_tag: LinkTag = LinkTag::new(String::from("Consumer"));
+  let links = get_links(EntryHash::from(agent_info.agent_initial_pubkey), Some(link_tag))?;
+
+  let suppliers: Vec<Consumer> = links
+      .into_iter()
+      .filter_map(|link| get_consumer(EntryHashB64::from(link.target) ).transpose())
+      .collect::<ExternResult<Vec<Consumer>>>()?;
+
+  Ok(suppliers)
+}
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct UpdateConsumerInput {

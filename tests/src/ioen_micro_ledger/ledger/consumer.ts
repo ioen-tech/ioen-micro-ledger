@@ -21,6 +21,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
     const bob = bob_happ.cells.find(cell => cell.cellRole.includes('/ioen_micro_ledger.dna')) as Cell;
 
     const entryContents = {"address":"123 Ioen St","postcode":"3149"};
+    const entry2Contents = {"address":"1 Redgrid St","postcode":"3149"};
 
     // Alice creates a consumer
     let create_output = await alice.call(
@@ -30,14 +31,30 @@ export default (orchestrator: Orchestrator<any>) =>  {
     );
     t.ok(create_output.header_hash);
     t.ok(create_output.entry_hash);
-
+    await bob.call(
+      "ledger",
+      "create_consumer",
+      entry2Contents
+    );
     await sleep(50);
     
     // Bob gets the created consumer
     let entry = await bob.call("ledger", "get_consumer", create_output.entry_hash);
     t.deepEqual(entry, entryContents);
     
-    
+    let aliceAgentinfoConsumer = await alice.call(
+      "ledger",
+      "agent_info_consumer"
+    );
+    t.deepEqual(aliceAgentinfoConsumer[0].address, "123 Ioen St");
+
+    let bobAgentinfoConsumer = await bob.call(
+      "ledger",
+      "agent_info_consumer"
+    );
+    t.deepEqual(bobAgentinfoConsumer[0].address, "1 Redgrid St");
+
+
     // Alice updates the consumer
     let update_output = await alice.call(
       "ledger",

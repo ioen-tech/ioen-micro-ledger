@@ -7,11 +7,17 @@ Vue.use(Vuex)
 export default {
   namespaced: true,
   state: {
-    consumers: []
+    consumer: {}
   },
   actions: {
-    async initialise ({ dispatch }) {
-      ConsumersApi.connect(process.env.VUE_APP_HC_PORT)
+    async initialise ({ state, commit }) {
+      ConsumersApi.connect(process.env.VUE_APP_HC_PORT, () => {
+        ConsumersApi.agentInfoConsumer((consumer) => {
+          if (consumer[0] !== undefined) {
+            commit('createConsumer', consumer[0])
+          }
+        })
+      })
     },
     createConsumer ({ commit }, payload) {
       const consumer = payload
@@ -28,16 +34,14 @@ export default {
     }
   },
   mutations: {
-    setConsumers (state, payload) {
-      state.consumers = payload
-    },
     createConsumer (state, payload) {
-      state.consumers.splice(0, 0, payload)
+      state.consumer = payload
     },
     updateConsumer (state, payload) {
-      state.consumers = state.consumers.map(consumer =>
-        consumer.uuid !== payload.uuid ? consumer : { ...consumer, ...payload }
-      )
+      const cons = { ...state.consumer }
+      cons.entryHash = payload.entry_hash
+      cons.headerHash = payload.header_hash
+      state.consumer = cons
     },
     deleteConsumer (state, payload) {
       state.consumers = state.consumers.filter(c => c.uuid !== payload.uuid)

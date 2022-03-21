@@ -31,16 +31,24 @@ export default (orchestrator: Orchestrator<any>) =>  {
     );
     t.ok(create_output.header_hash);
     t.ok(create_output.entry_hash);
-    await alice.call(
+    await bob.call(
       "ledger",
       "create_supplier",
       entry2Contents
     );
     await sleep(50);
-    
-    let agent_address = await bob.call("ledger", "who_am_i");
-    console.log("agent_address")
-    console.log(agent_address)
+
+    let aliceAgentinfoSupplier = await alice.call(
+      "ledger",
+      "agent_info_supplier"
+    );
+    t.deepEqual(aliceAgentinfoSupplier[0].address, "123 Ioen St");
+
+    let bobAgentinfoSupplier = await bob.call(
+      "ledger",
+      "agent_info_supplier"
+    );
+    t.deepEqual(bobAgentinfoSupplier[0].address, "1 Redgrid St");
 
     // Bob gets the first created supplier
     let entry = await bob.call("ledger", "get_supplier", create_output.entry_hash);

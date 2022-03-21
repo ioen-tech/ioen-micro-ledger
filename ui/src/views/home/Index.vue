@@ -44,6 +44,16 @@
                 <v-icon size="40" class="mr-2">mdi-account-outline</v-icon>
                 Consumers
               </v-btn>
+              <v-btn
+                class="align-self-end ma-5"
+                outlined
+                color="green"
+                width="250"
+                x-large
+                to="/demo-setup">
+                <v-icon size="40" class="mr-2">mdi-arrow-right-circle</v-icon>
+                Demo Setup
+              </v-btn>
             </v-row>
           </v-container>
         </v-theme-provider>
