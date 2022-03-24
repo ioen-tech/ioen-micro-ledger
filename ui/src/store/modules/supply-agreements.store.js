@@ -12,34 +12,41 @@ export default {
   actions: {
     async initialise ({ dispatch }) {
       SupplyAgreementsApi.connect(process.env.VUE_APP_HC_PORT, (cellId) => {
-        dispatch('listSupplyAgreements')
+        dispatch('listSuppliersAgreements')
       })
     },
-    createSupplyAgreement ({ rootState, commit }, payload) {
-      console.log(payload)
-      const agreement = {
-        from: parseInt(payload.from),
-        to: parseInt(payload.to),
-        rate: parseInt(payload.rate)
-      }
-      const newSupplyAgreement = {
-        supplier_entry_hash: rootState.suppliers.supplier.entryHash,
-        supply_agreement: agreement
-      }
-      commit('createSupplyAgreement', payload)
-      SupplyAgreementsApi.createSupplyAgreement(newSupplyAgreement, (committedSupplyAgreement) => {
-        commit('updateSupplyAgreement', committedSupplyAgreement)
+    async createSupplyAgreement ({ rootState, commit }, payload) {
+      return new Promise((resolve) => {
+        const agreement = {
+          from: parseInt(payload.from),
+          to: parseInt(payload.to),
+          rate: parseInt(payload.rate)
+        }
+        const newSupplyAgreement = {
+          supplierEntryHash: rootState.suppliers.supplier.entryHash,
+          supplyAgreement: agreement
+        }
+        SupplyAgreementsApi.createSupplyAgreement(newSupplyAgreement, (supplyAgreementHashes) => {
+          commit('createSupplyAgreement', supplyAgreementHashes)
+          resolve(supplyAgreementHashes)
+        })
       })
     },
     listSupplyAgreements ({ commit }) {
       SupplyAgreementsApi.listAllSupplyAgreements(result => {
+        console.log(result)
+        commit('setAllSupplyAgreements', result)
+      })
+    },
+    listSuppliersAgreements ({ rootState, commit }) {
+      SupplyAgreementsApi.listSuppliersAgreements(rootState.suppliers.supplier.entryHash, result => {
         console.log(result)
         commit('setSupplyAgreements', result)
       })
     }
   },
   mutations: {
-    setSupplyAgreements (state, payload) {
+    setAllSupplyAgreements (state, payload) {
       state.supplyAgreements = payload
     },
     createSupplyAgreement (state, payload) {
@@ -47,11 +54,11 @@ export default {
     },
     updateSupplyAgreement (state, payload) {
       state.supplyAgreements = state.supplyAgreements.map(supplyAgreement =>
-        supplyAgreement.uuid !== payload.uuid ? supplyAgreement : { ...supplyAgreement, ...payload }
+        supplyAgreement.headerHash !== payload.headerHash ? supplyAgreement : { ...supplyAgreement, ...payload }
       )
     },
     deleteSupplyAgreement (state, payload) {
-      state.supplyAgreements = state.supplyAgreements.filter(c => c.uuid !== payload.uuid)
+      state.supplyAgreements = state.supplyAgreements.filter(c => c.headerHash !== payload.headerHash)
     }
   },
   modules: {}

@@ -28,7 +28,7 @@ export function createSupplyAgreement (supplyAgreement, callback) {
     fn_name: 'create_supply_agreement',
     provenance: cellId[1],
     payload: supplyAgreement
-  }).then(committedSupplyAgreement => callback(committedSupplyAgreement))
+  }).then(supplyAgreementHashes => callback(supplyAgreementHashes))
 }
 
 export function deleteSupplyAgreement (supplyAgreement) {
@@ -42,14 +42,14 @@ export function deleteSupplyAgreement (supplyAgreement) {
   }).then(result => console.log(result))
 }
 
-export function listSuppliersAgreements (supplier, callback) {
+export function listSuppliersAgreements (supplierEntryHash, callback) {
   hcClient.callZome({
     cap: null,
     cell_id: cellId,
     zome_name: 'ledger',
     fn_name: 'list_suppliers_agreements',
     provenance: cellId[1],
-    payload: supplier
+    payload: supplierEntryHash
   }).then(result => callback(result))
 }
 

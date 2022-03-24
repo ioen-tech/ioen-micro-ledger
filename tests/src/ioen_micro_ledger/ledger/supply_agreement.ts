@@ -23,7 +23,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
     const supplierEntryContents = {"address":"123 Ioen St","postcode":"3149","method":"solar"};
 
     // Alice creates 2 suppliers
-    let supplierEntryHash = await alice.call(
+    let supplierEntry = await alice.call(
         "ledger",
         "create_supplier",
         supplierEntryContents
@@ -32,8 +32,8 @@ export default (orchestrator: Orchestrator<any>) =>  {
     const entryContents = {"from":1645151305198,"to":1645151305198,"rate":0.1};
 
     let new_supply_agreement = {
-      supplier_entry_hash: supplierEntryHash.entry_hash,
-      supply_agreement: entryContents
+      supplierEntryHash: supplierEntry.entry_hash,
+      supplyAgreement: entryContents
     }
     // Alice creates a supply_agreement
     let create_output = await alice.call(
@@ -44,6 +44,21 @@ export default (orchestrator: Orchestrator<any>) =>  {
     t.ok(create_output.header_hash);
     t.ok(create_output.entry_hash);
 
+    const entryContents2 = {"from":1645151305198,"to":1645151305198,"rate":0.1};
+
+    let new_supply_agreement2 = {
+      supplierEntryHash: supplierEntry.entry_hash,
+      supplyAgreement: entryContents2
+    }
+    // Alice creates a supply_agreement
+    let create_output2 = await alice.call(
+      "ledger",
+      "create_supply_agreement",
+      new_supply_agreement2
+    );
+    t.ok(create_output2.header_hash);
+    t.ok(create_output2.entry_hash);
+    console.log(create_output2)
     await sleep(50);
     
     // Bob gets the created supply_agreement
@@ -51,7 +66,7 @@ export default (orchestrator: Orchestrator<any>) =>  {
     t.deepEqual(entry, entryContents);
     
     let existing_supply_agreement = {
-      supplier_entry_hash: supplierEntryHash.entry_hash,
+      supplier_entry_hash: supplierEntry.entry_hash,
       supply_agreement_entry_hash: create_output.entry_hash
     }
 

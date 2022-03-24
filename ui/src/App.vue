@@ -48,6 +48,7 @@ export default {
   name: 'App',
   computed: {
     ...mapState('suppliers', ['supplier']),
+    ...mapState('supply-agreements', ['supplyAgreements']),
     ...mapState('consumers', ['consumer'])
   },
   methods: {
@@ -58,7 +59,7 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('suppliers/initialise')
+    this.$store.dispatch('suppliers/initialise').then(this.$store.dispatch('supply-agreements/initialise'))
     this.$store.dispatch('consumers/initialise')
   }
 }

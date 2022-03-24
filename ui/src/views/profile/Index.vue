@@ -38,6 +38,29 @@
                 width="300"
                 color="grey"
                 class="ma-2"
+                v-for="supplyAgreement in supplyAgreements"
+                :key="supplyAgreement.header_hash"
+              >
+              <v-card-title>Supply Agreement</v-card-title>
+                <v-card-text>
+                  <v-list
+                    subheader
+                    two-line
+                  >
+                    <v-list-item>
+                      <v-list-item-content>
+                        <v-list-item-subtitle v-text="supplyAgreement.from"></v-list-item-subtitle>
+                        <v-list-item-subtitle v-text="supplyAgreement.to"></v-list-item-subtitle>
+                        <v-list-item-subtitle v-text="supplyAgreement.rate"></v-list-item-subtitle>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list>
+                </v-card-text>
+              </v-card>
+              <v-card
+                width="300"
+                color="grey"
+                class="ma-2"
                 v-if="consumer.address !== undefined">
                 <v-card-title>Consumer</v-card-title>
                   <v-card-text>
@@ -73,6 +96,7 @@ export default {
   },
   computed: {
     ...mapState('suppliers', ['supplier']),
+    ...mapState('supply-agreements', ['supplyAgreements']),
     ...mapState('consumers', ['consumer'])
   }
 }

@@ -1,6 +1,9 @@
 use hdk::prelude::*;
 use hdk::prelude::holo_hash::*;
 use super::SupplyAgreement;
+use super::NewSupplyAgreementHashes;
+use super::NewSupplyAgreement;
+use super::ExistingSupplyAgreement;
 
 #[hdk_extern]
 pub fn get_supply_agreement(entry_hash: EntryHashB64) -> ExternResult<Option<SupplyAgreement>> {
@@ -16,24 +19,6 @@ pub fn get_supply_agreement(entry_hash: EntryHashB64) -> ExternResult<Option<Sup
       Ok(Some(supply_agreement))
     }
   }
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-pub struct NewSupplyAgreementOutput {
-  header_hash: HeaderHashB64,
-  entry_hash: EntryHashB64,
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-pub struct NewSupplyAgreement {
-  supplier_entry_hash: EntryHashB64,
-  supply_agreement: SupplyAgreement
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-pub struct ExistingSupplyAgreement {
-  supplier_entry_hash: EntryHashB64,
-  supply_agreement_entry_hash: EntryHashB64
 }
 
 #[hdk_extern]
@@ -63,8 +48,10 @@ pub fn list_all_supply_agreements(_: ()) -> ExternResult<Vec<SupplyAgreement>> {
 }
 
 #[hdk_extern]
-pub fn create_supply_agreement(new_supply_agreement: NewSupplyAgreement) -> ExternResult<NewSupplyAgreementOutput> {
+pub fn create_supply_agreement(new_supply_agreement: NewSupplyAgreement) -> ExternResult<NewSupplyAgreementHashes> {
 
+  debug!("{:?}", new_supply_agreement.supply_agreement);
+  debug!("{:?}", new_supply_agreement.supplier_entry_hash);
   let supply_agreement_path = format!("SupplyAgreements");
   let path = Path::from(supply_agreement_path);
   path.ensure()?;
@@ -77,10 +64,11 @@ pub fn create_supply_agreement(new_supply_agreement: NewSupplyAgreement) -> Exte
   // Link to supplier
   create_link(EntryHash::from(new_supply_agreement.supplier_entry_hash.clone()), entry_hash.clone(), ())?;
 
-  let output = NewSupplyAgreementOutput {
+  let output = NewSupplyAgreementHashes {
     header_hash: HeaderHashB64::from(header_hash),
     entry_hash: EntryHashB64::from(entry_hash)
   };
+  debug!("{:?}", output);
 
   Ok(output)
 }

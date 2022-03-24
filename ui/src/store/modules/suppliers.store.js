@@ -10,7 +10,7 @@ export default {
     supplier: {}
   },
   actions: {
-    async initialise ({ commit }) {
+    initialise ({ commit }) {
       SuppliersApi.connect(process.env.VUE_APP_HC_PORT, () => {
         SuppliersApi.agentInfoSupplier((supplier) => {
           if (supplier[0] !== undefined) commit('createSupplier', supplier[0])
@@ -20,8 +20,11 @@ export default {
     createSupplier ({ commit }, payload) {
       const supplier = payload
       commit('createSupplier', supplier)
-      SuppliersApi.createSupplier(supplier, (committedSupplier) => {
-        commit('updateSupplier', committedSupplier)
+      return new Promise((resolve, reject) => {
+        SuppliersApi.createSupplier(supplier, (supplierHashes) => {
+          commit('updateSupplier', supplierHashes)
+          resolve(supplierHashes)
+        })
       })
     }
   },

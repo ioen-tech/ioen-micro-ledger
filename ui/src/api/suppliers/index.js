@@ -39,7 +39,7 @@ export function createSupplier (supplier, callback) {
     fn_name: 'create_supplier',
     provenance: cellId[1],
     payload: supplier
-  }).then(committedSupplier => callback(committedSupplier))
+  }).then(supplierHashes => callback(supplierHashes))
 }
 
 export function deleteSupplier (supplier) {

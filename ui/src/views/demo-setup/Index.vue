@@ -107,6 +107,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
+const contractTime = 24 * 60 * 60 * 1000
 
 export default {
   name: 'Consumer',
@@ -177,7 +178,18 @@ export default {
         address: '3 Redgrid-Supplier Drive',
         postcode: '3000',
         description: 'Supplier with created agreements',
-        agreements: []
+        agreements: [
+          {
+            from: Date.now(),
+            to: Date.now() + contractTime,
+            rate: 2
+          },
+          {
+            from: Date.now(),
+            to: Date.now() + contractTime,
+            rate: 20
+          }
+        ]
       },
       {
         method: 'battery',
@@ -202,8 +214,21 @@ export default {
   methods: {
     ...mapActions('consumers', ['createConsumer']),
     ...mapActions('suppliers', ['createSupplier']),
-    setupSupplier (supplier) {
-      this.createSupplier(supplier)
+    ...mapActions('supply-agreements', ['createSupplyAgreement']),
+    setupSupplier (demoSupplier) {
+      this.createSupplier(demoSupplier).then(committedSupplier => {
+        console.log(committedSupplier)
+        let index = 1
+        demoSupplier.agreements.forEach(agreement => {
+          console.log('supply-agreements', index)
+          setTimeout(() => {
+            this.createSupplyAgreement(agreement).then(supplyAgreementHashes => {
+              console.log(supplyAgreementHashes)
+            })
+          }, index * 1000)
+          index = index + 1
+        })
+      })
       this.$router.push('/profile')
     },
     setupConsumer (consumer) {
